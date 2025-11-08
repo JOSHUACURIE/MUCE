@@ -18,6 +18,7 @@ import Newsletters from './pages/NewsLetters';
 import AlbumGallery from './pages/album';
 import Donate from './pages/donate';
 import PaymentSuccess from './components/payments/paymentsuccess';
+import ContactUs from './pages/contact';
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
             <Route path="/donate" element={<Donate />} />
             <Route path="/payment-success" element={<PaymentSuccess />} />
             <Route path="/knowledge/events" element={<Events />} />
+              <Route path="/contact" element={<ContactUs />} />
             {/* Add catch-all route for 404 pages */}
             <Route path="*" element={<Home />} />
           </Routes>
