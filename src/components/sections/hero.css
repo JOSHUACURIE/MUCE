@@ -1,0 +1,297 @@
+/* Image Slider Section - Between Core Values and Focus Areas */
+.image-slider-section {
+  padding: 4rem 0;
+  position: relative;
+  z-index: 2;
+}
+
+.slider-container {
+  max-width: 1400px; /* Increased max-width for larger images */
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.slider-section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--earth-green);
+  margin-bottom: 2rem;
+}
+
+
+.hero-slider {
+  position: relative;
+  width: 100%;
+  height: 75vh; 
+  min-height: 500px; 
+  max-height: 800px; 
+  border-radius: 20px; 
+  overflow: hidden;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+  margin: 0 auto;
+}
+
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: local; /* Better image fitting */
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-slide.transitioning {
+  opacity: 0.7;
+  transform: scale(1.03); /* Slightly increased scale */
+}
+
+.hero-slide-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+ /* Added gradient for better text visibility */
+  z-index: 1;
+}
+
+
+
+/* Navigation Arrows - Slightly larger */
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(240, 240, 240, 0.95); /* Slightly transparent */
+  border: none;
+  width: 55px; /* Increased from 50px */
+  height: 55px; /* Increased from 50px */
+  border-radius: 50%;
+  font-size: 1.7rem; /* Increased from 1.5rem */
+  font-weight: bold;
+  color: var(--earth-green);
+  cursor: pointer;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); /* Enhanced shadow */
+}
+
+.slider-arrow:hover {
+  background: white;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35); /* Enhanced shadow */
+}
+
+.slider-arrow-prev {
+  left: 2.5rem; /* Increased from 2rem */
+}
+
+.slider-arrow-next {
+  right: 2.5rem; /* Increased from 2rem */
+}
+
+
+
+/* Existing Hero Styles */
+.hero {
+  position: relative;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.3) 0%, rgba(30, 61, 26, 0.6) 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  /* Your existing hero content styles */
+}
+
+.program-pillars {
+  position: relative;
+  z-index: 2;
+  background: white;
+  padding: 4rem 0;
+}
+
+/* Responsive Design - Updated for larger sizes */
+@media (max-width: 1024px) {
+  .slider-container {
+    max-width: 1200px;
+    padding: 0 1.5rem;
+  }
+  
+  .hero-slider {
+    height: 65vh;
+    min-height: 450px;
+    max-height: 700px;
+  }
+}
+
+@media (max-width: 768px) {
+  .image-slider-section {
+    padding: 3rem 0;
+  }
+  
+  .slider-section-title {
+    font-size: 2.2rem; /* Slightly smaller but still prominent */
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-slider {
+    height: 55vh; /* Adjusted for mobile */
+    min-height: 400px;
+    max-height: 600px;
+    border-radius: 16px;
+  }
+  
+  .slider-arrow {
+    width: 48px; /* Adjusted */
+    height: 48px;
+    font-size: 1.5rem;
+  }
+  
+  .slider-arrow-prev {
+    left: 1.5rem;
+  }
+  
+  .slider-arrow-next {
+    right: 1.5rem;
+  }
+  
+  .slide-title {
+    font-size: 1.4rem; /* Adjusted */
+    bottom: 2rem;
+    padding: 0.8rem 2rem;
+    max-width: 90%;
+  }
+  
+  .slider-container {
+    padding: 0 1rem;
+  }
+  
+ 
+ 
+}
+
+@media (max-width: 480px) {
+  .image-slider-section {
+    padding: 2.5rem 0;
+  }
+  
+  .slider-section-title {
+    font-size: 2rem;
+  }
+  
+  .hero-slider {
+    height: 50vh;
+    min-height: 350px;
+    max-height: 500px;
+    border-radius: 12px;
+  }
+  
+  .slider-arrow {
+    width: 42px;
+    height: 42px;
+    font-size: 1.3rem;
+  }
+  
+  .slider-arrow-prev {
+    left: 1rem;
+  }
+  
+  .slider-arrow-next {
+    right: 1rem;
+  }
+  
+  .slide-title {
+    font-size: 1.2rem;
+    bottom: 1.5rem;
+    padding: 0.7rem 1.5rem;
+    white-space: normal;
+    line-height: 1.3;
+  }
+  
+  
+}
+
+/* Animation for smooth transitions */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hero-slide {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Ensure images fit perfectly in their containers */
+.hero-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Additional optimization for image fitting */
+.hero-slide {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+/* Reset default margins and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Specifically target the hero and footer sections */
+.hero {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.footer {
+
+  padding: 3rem 0 0;
+  margin-top: 0;
+
+}
+
+/* Or if you have a main content wrapper */
+.page-container {
+  margin: 0;
+  padding: 0;
+}
