@@ -8642,6 +8642,7 @@ grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
 .management-expertise-tags {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.5rem;
 }
 
