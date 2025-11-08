@@ -5314,7 +5314,18 @@ grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
   border-color: var(--earth-green);
 }
+.location-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: 0.5rem;
+}
 
+.location-item {
+  font-size: 0.9rem;
+  color: var(--white);
+  opacity: 0.9;
+}
 .report-year {
   background: var(--earth-green);
   color: var(--white);

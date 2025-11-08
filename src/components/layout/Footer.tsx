@@ -23,6 +23,9 @@ const Footer: React.FC = () => {
               <div className="contact-item">
                 <strong>Phone:</strong> 254706494506 / +254 797 495504
               </div>
+              <div className="contact-item">
+                <strong>Locations:</strong> Kisumu East, Kolwa Central, Renja Primary
+              </div>
             </div>
           </div>
 
