@@ -9466,6 +9466,18 @@ grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
   font-size: 1rem;
   cursor: pointer;
   margin-top: 1rem;
+    width: 100%;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 .flutterwave-button:hover {

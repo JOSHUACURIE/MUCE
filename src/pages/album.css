@@ -256,6 +256,7 @@
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 width: 70%;
 margin: 0 auto;
+gap: 5%;
 }
 
 .albums-grid {
