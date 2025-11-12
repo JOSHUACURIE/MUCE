@@ -23,7 +23,8 @@ const IMAGE_PATHS = {
     WOMEN: "/women.jpg",
     GREEN: "/green.jpg",
     SPORTS: "/sports.jpg",
-    DIGITAL: "/digital.jpg"
+    DIGITAL: "/digital.jpg",
+    CLEANING: "/work1.jpg" // Using first work image as cover
   },
   ALBUMS: {
     ENERGY: "/energy.jpg",
@@ -32,6 +33,22 @@ const IMAGE_PATHS = {
     TREE: "/tree.jpg",
     COMMUNITY: "/communit.jpg",
     LEADERS: "/leaders.jpg"
+  },
+  // Environment cleaning work images
+  CLEANING: {
+    WORK1: "/work1.jpg",
+    WORK2: "/work2.jpg",
+    WORK3: "/work3.jpg",
+    WORK4: "/work4.jpg",
+    WORK5: "/work5.jpg",
+    WORK6: "/work6.jpg",
+    WORK7: "/work7.jpg",
+    WORK8: "/work8.jpg",
+    WORK9: "/work9.jpg",
+    WORK10: "/work10.jpg",
+    WORK11: "/work11.jpg",
+    WORK12: "/work12.jpg",
+    WORK13: "/work13.jpg"
   }
 } as const;
 
@@ -141,6 +158,83 @@ export const albums: Album[] = [
         featured: false
       }
     ]
+  },
+  // NEW: Environment Cleaning Album
+  {
+    id: 7,
+    title: "Community Environment Cleaning",
+    coverImage: IMAGE_PATHS.COVERS.CLEANING,
+    photoCount: 13,
+    date: "2025-11-12",
+    category: "Environment & Sustainability",
+    featured: true,
+    images: [
+      {
+        id: 9,
+        imageUrl: IMAGE_PATHS.CLEANING.WORK1,
+        featured: true
+      },
+      {
+        id: 10,
+        imageUrl: IMAGE_PATHS.CLEANING.WORK2,
+        featured: false
+      },
+      {
+        id: 11,
+        imageUrl: IMAGE_PATHS.CLEANING.WORK3,
+        featured: false
+      },
+      {
+        id: 12,
+        imageUrl: IMAGE_PATHS.CLEANING.WORK4,
+        featured: false
+      },
+      {
+        id: 13,
+        imageUrl: IMAGE_PATHS.CLEANING.WORK5,
+        featured: false
+      },
+      {
+        id: 14,
+        imageUrl: IMAGE_PATHS.CLEANING.WORK6,
+        featured: false
+      },
+      {
+        id: 15,
+        imageUrl: IMAGE_PATHS.CLEANING.WORK7,
+        featured: false
+      },
+      {
+        id: 16,
+        imageUrl: IMAGE_PATHS.CLEANING.WORK8,
+        featured: false
+      },
+      {
+        id: 17,
+        imageUrl: IMAGE_PATHS.CLEANING.WORK9,
+        featured: false
+      },
+      {
+        id: 18,
+        imageUrl: IMAGE_PATHS.CLEANING.WORK10,
+        featured: false
+      },
+      {
+        id: 19,
+        imageUrl: IMAGE_PATHS.CLEANING.WORK11,
+        featured: false
+      },
+      {
+        id: 20,
+        imageUrl: IMAGE_PATHS.CLEANING.WORK12,
+        featured: false
+      },
+      {
+        id: 21,
+        imageUrl: IMAGE_PATHS.CLEANING.WORK13,
+        featured: false
+      }
+    ]
   }
 ];
 
@@ -169,6 +263,7 @@ export const allImageFiles: string[] = [
   ...new Set([
     ...Object.values(IMAGE_PATHS.COVERS),
     ...Object.values(IMAGE_PATHS.ALBUMS),
+    ...Object.values(IMAGE_PATHS.CLEANING),
     "/annual.jpg",
     "/sing.jpg",
     "/health.jpg"
@@ -184,3 +279,17 @@ export const categoryCoverImages = {
   "Health & Wellness": "/health.jpg",
   "Youth Programs": "/yudhe.jpg"
 };
+
+// NEW: Get environment cleaning images specifically
+export const getEnvironmentCleaningImages = (): AlbumImage[] => {
+  const cleaningAlbum = albums.find(album => album.id === 7);
+  return cleaningAlbum?.images || [];
+};
+
+// NEW: Get albums by featured status with environment cleaning
+export const getFeaturedAlbumsWithCleaning = (): Album[] => 
+  albums.filter(album => album.featured);
+
+// NEW: Get all environment-related albums
+export const getEnvironmentAlbums = (): Album[] => 
+  albums.filter(album => album.category === "Environment & Sustainability");
