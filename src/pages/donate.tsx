@@ -4,10 +4,20 @@ import DonationForm from '../components/payments/donateform';
 import PaymentSuccess from '../components/payments/paymentsuccess';
 import '../styles/globals.css';
 
+// Temporary type declaration
+declare const process: {
+  env: {
+    NEXT_PUBLIC_FLUTTERWAVE_PUBLIC_KEY?: string;
+  };
+};
+
 const Donate: React.FC = () => {
   const [paymentStatus, setPaymentStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [paymentData, setPaymentData] = useState<any>(null);
   const [errorMessage, setErrorMessage] = useState<string>('');
+
+  // Get the public key from environment variables
+  const flutterwavePublicKey = process.env.NEXT_PUBLIC_FLUTTERWAVE_PUBLIC_KEY;
 
   const handlePaymentSuccess = (data: any) => {
     setPaymentData(data);
@@ -24,6 +34,28 @@ const Donate: React.FC = () => {
     setPaymentData(null);
     setErrorMessage('');
   };
+
+  // Show error if public key is not configured
+  if (!flutterwavePublicKey) {
+    return (
+      <div className="page-container">
+        <div className="page-header">
+          <div className="breadcrumb">
+            <a href="/">Home</a> &gt; <span>Donate</span>
+          </div>
+          <h1 className="page-title">Make a Donation</h1>
+        </div>
+        <div className="error-message">
+          <h2>Payment System Temporarily Unavailable</h2>
+          <p>We're experiencing technical difficulties with our payment system. Please try again later or contact us directly.</p>
+          <div className="contact-info">
+            <p>Email: donations@millimanunited.org</p>
+            <p>Phone: +254 700 000 000</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="page-container">
@@ -48,6 +80,7 @@ const Donate: React.FC = () => {
             {/* Donation Form */}
             <div className="donation-main">
               <DonationForm 
+                publicKey={flutterwavePublicKey}
                 onSuccess={handlePaymentSuccess}
                 onError={handlePaymentError}
               />
