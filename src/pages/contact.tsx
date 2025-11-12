@@ -42,12 +42,12 @@ const ContactUs: React.FC = () => {
         is_urgent: formData.subject.includes('emergency') || formData.message.toLowerCase().includes('urgent')
       };
 
-      // Send email using EmailJS with your specific IDs
+   
       await emailjs.send(
-        'service_gxnc7f9',      // Your service ID
-        'template_qjjc7ve',     // Your template ID
+        'service_gxnc7f9',      
+        'template_qjjc7ve',     
         templateParams,
-        'EmonCbOLCGXqFDhe3'       // You'll need to add your public key here
+        'EmonCbOLCGXqFDhe3'      
       );
 
       console.log('Email sent successfully:', formData);

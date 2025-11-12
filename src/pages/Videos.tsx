@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/globals.css';
 import { photos, photoCategories } from '../data/images'; // Adjust import path as needed
-
+import FacebookVideo from '../components/FBVideos';
 const Videos: React.FC = () => {
   // Map photos to video cards
   const videoCards = [
@@ -135,6 +135,21 @@ const Videos: React.FC = () => {
             </div>
           </div>
         </section>
+{/* Facebook Videos */}
+<section className="content-section">
+  <div className="section-header">
+    <h2>Facebook Videos</h2>
+    <div className="section-divider"></div>
+    <p className="section-description">
+      Watch our latest stories and events directly from our official Facebook page
+    </p>
+  </div>
+
+  <div className="facebook-videos-grid">
+    <FacebookVideo videoUrl="https://www.facebook.com/reel/2329624127499180/" />
+    <FacebookVideo videoUrl="https://www.facebook.com/reel/1335377031572278/" />
+  </div>
+</section>
 
         {/* Video Categories */}
         <section className="content-section">
