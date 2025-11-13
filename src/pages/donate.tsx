@@ -17,7 +17,7 @@ const Donate: React.FC = () => {
   const [errorMessage, setErrorMessage] = useState<string>('');
 
   // Get the public key from environment variables
-  const flutterwavePublicKey = process.env.NEXT_PUBLIC_FLUTTERWAVE_PUBLIC_KEY;
+  const flutterwavePublicKey = 'dddd';
 
   const handlePaymentSuccess = (data: any) => {
     setPaymentData(data);
