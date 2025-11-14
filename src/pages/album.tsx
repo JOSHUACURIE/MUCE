@@ -1,100 +1,111 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import './album.css';
 import { albums, getFeaturedAlbums, getRecentAlbums, type Album, type AlbumImage } from '../data/album';
 
-// Linked List Node for image navigation
-class ImageNode {
-  image: AlbumImage;
-  next: ImageNode | null;
-  prev: ImageNode | null;
+const CONFIG = {
+  IMAGES_PER_PAGE: 12,
+  LAZY_LOAD_THRESHOLD: 100,
+} as const;
 
-  constructor(image: AlbumImage) {
-    this.image = image;
-    this.next = null;
-    this.prev = null;
-  }
+// Lazy loading image component
+interface LazyImageProps {
+  src: string;
+  alt: string;
+  className?: string;
+  onLoad?: () => void;
+  onError?: () => void;
 }
 
-// Linked List for image navigation
-class ImageLinkedList {
-  head: ImageNode | null;
-  tail: ImageNode | null;
-  current: ImageNode | null;
+const LazyImage: React.FC<LazyImageProps> = ({ 
+  src, 
+  alt, 
+  className = '', 
+  onLoad,
+  onError 
+}) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [isInView, setIsInView] = useState(false);
+  const imgRef = React.useRef<HTMLImageElement>(null);
 
-  constructor() {
-    this.head = null;
-    this.tail = null;
-    this.current = null;
-  }
-
-  addImage(image: AlbumImage): void {
-    const newNode = new ImageNode(image);
-    
-    if (!this.head) {
-      this.head = newNode;
-      this.tail = newNode;
-      this.current = newNode;
-    } else {
-      if (this.tail) {
-        this.tail.next = newNode;
-        newNode.prev = this.tail;
-        this.tail = newNode;
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.disconnect();
+        }
+      },
+      { 
+        rootMargin: `${CONFIG.LAZY_LOAD_THRESHOLD}px`,
+        threshold: 0.1
       }
+    );
+
+    if (imgRef.current) {
+      observer.observe(imgRef.current);
     }
-  }
 
-  next(): void {
-    if (this.current && this.current.next) {
-      this.current = this.current.next;
+    return () => observer.disconnect();
+  }, []);
+
+  const handleLoad = () => {
+    setIsLoaded(true);
+    onLoad?.();
+  };
+
+  return (
+    <img
+      ref={imgRef}
+      src={isInView ? src : 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjNmM2YzIi8+PC9zdmc+'}
+      alt={alt}
+      className={`${className} ${isLoaded ? 'image-loaded' : 'image-loading'}`}
+      loading="lazy"
+      onLoad={handleLoad}
+      onError={onError}
+    />
+  );
+};
+
+// Pagination Hook
+const usePagination = <T,>(items: T[], itemsPerPage: number) => {
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const totalPages = Math.ceil(items.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const paginatedItems = items.slice(startIndex, startIndex + itemsPerPage);
+
+  const goToPage = (page: number) => {
+    setCurrentPage(Math.max(1, Math.min(page, totalPages)));
+  };
+
+  const nextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
     }
-  }
+  };
 
-  previous(): void {
-    if (this.current && this.current.prev) {
-      this.current = this.current.prev;
+  const prevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
     }
-  }
+  };
 
-  getCurrent(): AlbumImage | null {
-    return this.current ? this.current.image : null;
-  }
+  const resetPagination = () => {
+    setCurrentPage(1);
+  };
 
-  hasNext(): boolean {
-    return this.current ? this.current.next !== null : false;
-  }
-
-  hasPrevious(): boolean {
-    return this.current ? this.current.prev !== null : false;
-  }
-
-  getTotalImages(): number {
-    let count = 0;
-    let current = this.head;
-    while (current) {
-      count++;
-      current = current.next;
-    }
-    return count;
-  }
-
-  getCurrentIndex(): number {
-    let index = 0;
-    let current = this.head;
-    while (current && current !== this.current) {
-      index++;
-      current = current.next;
-    }
-    return index;
-  }
-
-  buildFromAlbum(albumImages: AlbumImage[]): void {
-    this.head = null;
-    this.tail = null;
-    this.current = null;
-    
-    albumImages.forEach(image => this.addImage(image));
-  }
-}
+  return {
+    currentPage,
+    totalPages,
+    paginatedItems,
+    goToPage,
+    nextPage,
+    prevPage,
+    resetPagination,
+    hasNextPage: currentPage < totalPages,
+    hasPrevPage: currentPage > 1,
+  };
+};
 
 // Image Viewer Component
 interface ImageViewerProps {
@@ -105,78 +116,65 @@ interface ImageViewerProps {
 }
 
 const ImageViewer: React.FC<ImageViewerProps> = ({ images, initialIndex, albumTitle, onClose }) => {
-  const [imageList] = useState(() => {
-    const list = new ImageLinkedList();
-    list.buildFromAlbum(images);
-    
-    // Set initial position
-    let current = list.head;
-    for (let i = 0; i < initialIndex && current; i++) {
-      current = current.next;
-    }
-    list.current = current;
-    
-    return list;
-  });
-
-  const [currentImage, setCurrentImage] = useState(imageList.getCurrent());
+  const [currentIndex, setCurrentIndex] = useState(initialIndex);
+  const currentImage = images[currentIndex];
 
   const handleNext = () => {
-    imageList.next();
-    setCurrentImage(imageList.getCurrent());
+    if (currentIndex < images.length - 1) {
+      setCurrentIndex(currentIndex + 1);
+    }
   };
 
   const handlePrevious = () => {
-    imageList.previous();
-    setCurrentImage(imageList.getCurrent());
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+    }
   };
 
-  const handleKeyDown = (e: KeyboardEvent) => {
+  const handleKeyDown = useCallback((e: KeyboardEvent) => {
     if (e.key === 'Escape') onClose();
     if (e.key === 'ArrowRight') handleNext();
     if (e.key === 'ArrowLeft') handlePrevious();
-  };
+  }, [onClose, handleNext, handlePrevious]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     document.addEventListener('keydown', handleKeyDown);
-    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    document.body.style.overflow = 'hidden';
     
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
       document.body.style.overflow = 'unset';
     };
-  }, []);
+  }, [handleKeyDown]);
 
   if (!currentImage) return null;
 
   return (
     <div className="image-viewer-overlay" onClick={onClose}>
       <div className="image-viewer-container" onClick={(e) => e.stopPropagation()}>
-        {/* Header */}
         <div className="image-viewer-header">
           <h3>{albumTitle}</h3>
           <span className="image-counter">
-            {imageList.getCurrentIndex() + 1} / {imageList.getTotalImages()}
+            {currentIndex + 1} / {images.length}
           </span>
           <button className="close-button" onClick={onClose}>
             ×
           </button>
         </div>
 
-        {/* Main Image */}
         <div className="image-viewer-content">
           <button 
             className="nav-button prev-button"
             onClick={handlePrevious}
-            disabled={!imageList.hasPrevious()}
+            disabled={currentIndex === 0}
           >
             ‹
           </button>
 
           <div className="image-container">
-            <img 
-              src={currentImage.imageUrl} 
-              alt={`${albumTitle} - Image ${imageList.getCurrentIndex() + 1}`}
+            <LazyImage
+              src={currentImage.imageUrl}
+              alt={`${albumTitle} - Image ${currentIndex + 1}`}
               className="viewer-image"
             />
           </div>
@@ -184,30 +182,23 @@ const ImageViewer: React.FC<ImageViewerProps> = ({ images, initialIndex, albumTi
           <button 
             className="nav-button next-button"
             onClick={handleNext}
-            disabled={!imageList.hasNext()}
+            disabled={currentIndex === images.length - 1}
           >
             ›
           </button>
         </div>
 
-        {/* Thumbnail Navigation */}
         <div className="thumbnail-container">
           {images.map((image, index) => (
             <div
               key={image.id}
-              className={`thumbnail ${index === imageList.getCurrentIndex() ? 'active' : ''}`}
-              onClick={() => {
-                // Navigate to specific image
-                const list = imageList;
-                let current = list.head;
-                for (let i = 0; i < index && current; i++) {
-                  current = current.next;
-                }
-                list.current = current;
-                setCurrentImage(list.getCurrent());
-              }}
+              className={`thumbnail ${index === currentIndex ? 'active' : ''}`}
+              onClick={() => setCurrentIndex(index)}
             >
-              <img src={image.imageUrl} alt={`Thumbnail ${index + 1}`} />
+              <LazyImage
+                src={image.imageUrl}
+                alt={`Thumbnail ${index + 1}`}
+              />
             </div>
           ))}
         </div>
@@ -216,49 +207,26 @@ const ImageViewer: React.FC<ImageViewerProps> = ({ images, initialIndex, albumTi
   );
 };
 
-// Main Album Gallery Component
-const AlbumGallery: React.FC = () => {
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  const [selectedAlbum, setSelectedAlbum] = useState<Album | null>(null);
-  const [selectedImageIndex, setSelectedImageIndex] = useState<number>(0);
-  const [isViewerOpen, setIsViewerOpen] = useState<boolean>(false);
+// Album Card Component
+interface AlbumCardProps {
+  album: Album;
+  onViewAlbum: (albumId: number, imageIndex?: number) => void;
+}
 
-  const featuredAlbums = getFeaturedAlbums();
-  const recentAlbums = getRecentAlbums();
-  const categories = [...new Set(albums.map(album => album.category))];
-
-  const filteredAlbums = selectedCategory === 'all' 
-    ? albums 
-    : albums.filter(album => album.category === selectedCategory);
-
-  const handleViewAlbum = (albumId: number, imageIndex: number = 0) => {
-    const album = albums.find(a => a.id === albumId);
-    if (album && album.images.length > 0) {
-      setSelectedAlbum(album);
-      setSelectedImageIndex(imageIndex);
-      setIsViewerOpen(true);
-    } else {
-      alert(`Album "${album?.title}" doesn't contain any images yet.`);
-    }
-  };
-
-  const handleCloseViewer = () => {
-    setIsViewerOpen(false);
-    setSelectedAlbum(null);
-  };
-
-  const renderAlbumCard = (album: Album) => (
-    <div key={album.id} className="album-card">
-      <div 
-        className="album-cover-image"
-        style={{ backgroundImage: `url(${album.coverImage})` }}
-      >
+const AlbumCard: React.FC<AlbumCardProps> = React.memo(({ album, onViewAlbum }) => {
+  return (
+    <div className="album-card">
+      <div className="album-cover">
+        <LazyImage
+          src={album.coverImage}
+          alt={`Cover for ${album.title}`}
+          className="album-cover-image"
+        />
         <div className="album-overlay">
           <div className="album-actions">
             <button 
               className="view-album-btn"
-              onClick={() => handleViewAlbum(album.id)}
-              aria-label={`View ${album.title} album`}
+              onClick={() => onViewAlbum(album.id)}
             >
               {album.images.length > 0 ? `View Album (${album.images.length})` : 'No Images'}
             </button>
@@ -277,75 +245,155 @@ const AlbumGallery: React.FC = () => {
             })}
           </span>
         </div>
-        <div className="album-preview">
-          {album.images.slice(0, 3).map((image, index) => (
-            <div 
-              key={image.id}
-              className="preview-image"
-              style={{ backgroundImage: `url(${image.imageUrl})` }}
-              onClick={() => handleViewAlbum(album.id, index)}
-            />
-          ))}
-          {album.images.length > 3 && (
-            <div 
-              className="more-photos"
-              onClick={() => handleViewAlbum(album.id)}
-            >
-              +{album.images.length - 3} more
-            </div>
-          )}
-          {album.images.length === 0 && (
-            <div className="no-photos">No photos yet</div>
-          )}
-        </div>
+       
       </div>
     </div>
+  );
+});
+
+AlbumCard.displayName = 'AlbumCard';
+
+// Main Album Gallery Component
+const AlbumGallery: React.FC = () => {
+  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [selectedAlbum, setSelectedAlbum] = useState<Album | null>(null);
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number>(0);
+  const [isViewerOpen, setIsViewerOpen] = useState<boolean>(false);
+
+  const featuredAlbums = useMemo(() => getFeaturedAlbums(), []);
+  const recentAlbums = useMemo(() => getRecentAlbums(), []);
+  const categories = useMemo(() => [...new Set(albums.map(album => album.category))], []);
+
+  const filteredAlbums = useMemo(() => 
+    selectedCategory === 'all' 
+      ? albums 
+      : albums.filter(album => album.category === selectedCategory),
+    [selectedCategory]
+  );
+
+  const {
+    currentPage,
+    totalPages,
+    paginatedItems: paginatedAlbums,
+    goToPage,
+    nextPage,
+    prevPage,
+    resetPagination,
+    hasNextPage,
+    hasPrevPage,
+  } = usePagination(filteredAlbums, CONFIG.IMAGES_PER_PAGE);
+
+  useEffect(() => {
+    resetPagination();
+  }, [selectedCategory, resetPagination]);
+
+  const handleViewAlbum = useCallback((albumId: number, imageIndex: number = 0) => {
+    const album = albums.find(a => a.id === albumId);
+    if (album && album.images.length > 0) {
+      setSelectedAlbum(album);
+      setSelectedImageIndex(imageIndex);
+      setIsViewerOpen(true);
+    }
+  }, []);
+
+  const handleCloseViewer = useCallback(() => {
+    setIsViewerOpen(false);
+    setSelectedAlbum(null);
+  }, []);
+
+  const renderPagination = () => {
+    if (totalPages <= 1) return null;
+
+    const pageNumbers = [];
+    const maxVisiblePages = 5;
+    let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
+    let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+
+    if (endPage - startPage + 1 < maxVisiblePages) {
+      startPage = Math.max(1, endPage - maxVisiblePages + 1);
+    }
+
+    for (let i = startPage; i <= endPage; i++) {
+      pageNumbers.push(i);
+    }
+
+    return (
+      <div className="pagination">
+        <button 
+          className="pagination-btn"
+          onClick={prevPage}
+          disabled={!hasPrevPage}
+        >
+          Previous
+        </button>
+
+        <div className="page-numbers">
+          {pageNumbers.map(page => (
+            <button
+              key={page}
+              className={`page-number ${currentPage === page ? 'active' : ''}`}
+              onClick={() => goToPage(page)}
+            >
+              {page}
+            </button>
+          ))}
+        </div>
+
+        <button 
+          className="pagination-btn"
+          onClick={nextPage}
+          disabled={!hasNextPage}
+        >
+          Next
+        </button>
+      </div>
+    );
+  };
+
+  const totalPhotos = useMemo(() => 
+    albums.reduce((total, album) => total + album.images.length, 0),
+    []
   );
 
   return (
     <div className="page-container">
       <div className="page-header">
-        <div className="breadcrumb">
-          <a href="/">Home</a> &gt; <a href="/media">Media</a> &gt; <span>Photo Albums</span>
-        </div>
         <h1 className="page-title">Photo Albums</h1>
         <p className="page-subtitle">
-          Browse our collection of curated photo albums capturing community moments
+          Browse our collection of curated photo albums
         </p>
       </div>
 
       <div className="page-content">
-        {/* Featured Albums */}
         {featuredAlbums.length > 0 && (
           <section className="content-section">
             <div className="section-header">
               <h2>Featured Albums</h2>
-              <div className="section-divider"></div>
-              <p className="section-description">
-                Highlighted collections showcasing our most impactful moments
-              </p>
             </div>
             
             <div className="featured-albums-grid">
-              {featuredAlbums.map(renderAlbumCard)}
+              {featuredAlbums.map(album => (
+                <AlbumCard
+                  key={album.id}
+                  album={album}
+                  onViewAlbum={handleViewAlbum}
+                />
+              ))}
             </div>
           </section>
         )}
 
-        {/* All Albums */}
         <section className="content-section">
           <div className="section-header">
             <h2>All Albums</h2>
-            <div className="section-divider"></div>
           </div>
 
-          {/* Category Filter */}
           <div className="category-filters">
             <button 
               className={`filterr-btn ${selectedCategory === 'all' ? 'active' : ''}`}
               onClick={() => setSelectedCategory('all')}
             >
-              All Albums
+              All
             </button>
             {categories.map(category => (
               <button 
@@ -359,75 +407,58 @@ const AlbumGallery: React.FC = () => {
           </div>
 
           <div className="albums-grid">
-            {filteredAlbums.map(renderAlbumCard)}
+            {paginatedAlbums.map(album => (
+              <AlbumCard
+                key={album.id}
+                album={album}
+                onViewAlbum={handleViewAlbum}
+              />
+            ))}
+          </div>
+
+          {renderPagination()}
+
+          <div className="results-info">
+            Showing {paginatedAlbums.length} of {filteredAlbums.length} albums 
           </div>
         </section>
 
-        {/* Recent Albums */}
         {recentAlbums.length > 0 && (
           <section className="content-section">
             <div className="section-header">
-              <h2>Recently Updated</h2>
-              <div className="section-divider"></div>
+              <h2>Recent Albums</h2>
             </div>
             
             <div className="albums-grid">
-              {recentAlbums.map(renderAlbumCard)}
+              {recentAlbums.map(album => (
+                <AlbumCard
+                  key={album.id}
+                  album={album}
+                  onViewAlbum={handleViewAlbum}
+                />
+              ))}
             </div>
           </section>
         )}
 
-        {/* Stats Section */}
         <section className="content-section stats-section">
-          <div className="section-header">
-            <h2>Our Gallery</h2>
-            <div className="section-divider"></div>
-          </div>
           <div className="stats-grid">
             <div className="stat-item">
               <div className="stat-number">{albums.length}</div>
               <div className="stat-label">Albums</div>
             </div>
             <div className="stat-item">
-              <div className="stat-number">
-                {albums.reduce((total, album) => total + album.images.length, 0)}
-              </div>
+              <div className="stat-number">{totalPhotos}</div>
               <div className="stat-label">Photos</div>
             </div>
             <div className="stat-item">
               <div className="stat-number">{categories.length}</div>
               <div className="stat-label">Categories</div>
             </div>
-            <div className="stat-item">
-              <div className="stat-number">
-                {new Date().getFullYear() - 2023}
-              </div>
-              <div className="stat-label">Years</div>
-            </div>
-          </div>
-        </section>
-
-        {/* Call to Action */}
-        <section className="cta-section">
-          <div className="cta-content">
-            <h2>Missing Something?</h2>
-            <p>
-              Can't find the photos you're looking for? Contact us to request specific albums 
-              or share your own community photos with us.
-            </p>
-            <div className="cta-buttons">
-              <a href="/contact" className="cta-button primary">
-                Request Photos
-              </a>
-              <a href="/media/photos" className="cta-button secondary">
-                View All Photos
-              </a>
-            </div>
           </div>
         </section>
       </div>
 
-      {/* Image Viewer Modal */}
       {isViewerOpen && selectedAlbum && (
         <ImageViewer
           images={selectedAlbum.images}

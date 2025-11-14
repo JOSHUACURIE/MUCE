@@ -4151,7 +4151,7 @@ width: 100%;
 
 .video-container {
   position: relative;
-background-image: url('/sing.jpg');
+background-image: url('https://imgur.com/3dp5xc7.jpg');
 background-size: cover;
   min-height: 400px;
   display: flex;
@@ -9074,6 +9074,7 @@ grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
   
   .management-executive-photo {
     padding: 2rem 1rem;
+    
   }
   
   .management-executive-info {
@@ -9102,11 +9103,12 @@ grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
     justify-content: flex-start;
   }
   
-  .management-team-image {
+ .management-team-image {
     width: 80px;
     height: 80px;
-    margin-bottom: 0;
-  }
+    margin: 0 auto 0 auto; 
+    display: block;        
+}
   
   .management-team-role {
     text-align: left;

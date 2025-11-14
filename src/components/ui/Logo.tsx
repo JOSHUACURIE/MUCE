@@ -33,7 +33,7 @@ const Logo: React.FC<LogoProps> = ({
       {/* Logo Image */}
       <div className="logo-image">
         <img 
-          src="/logo.jpg" 
+          src="https://imgur.com/u9JTUW3.jpg" 
           alt="Millimani United Logo" 
           width={logoSize[size].width}
           height={logoSize[size].height}

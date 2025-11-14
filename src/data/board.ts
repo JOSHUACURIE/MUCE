@@ -21,7 +21,7 @@ export const boardMembers: BoardMember[] = [
     expertise: ["Strategic Planning", "Community Development", "Stakeholder Engagement"],
     emoji: "👨‍💼",
     featured: true,
-    imageUrl: "/director.jpg",
+    imageUrl: "https://imgur.com/NFpzNLo.jpg",
     altText: "Director Syphero Okello - Chairperson"
   },
   {
@@ -33,7 +33,7 @@ export const boardMembers: BoardMember[] = [
     expertise: ["Sustainable Agriculture", "Rural Development", "Environmental Conservation"],
     emoji: "👨‍🌾",
     featured: false,
-    imageUrl: "/bill.jpg",
+    imageUrl: "https://imgur.com/43vcZnx.jpg",
     altText: "Bill Clinton - Agricultural Economist"
   },
   {
@@ -45,7 +45,7 @@ export const boardMembers: BoardMember[] = [
     expertise: ["Public Health", "Community Wellness", "Healthcare Access"],
     emoji: "👩‍⚕️",
     featured: false,
-    imageUrl: "/nancy.jpg",
+    imageUrl: "https://imgur.com/2vr0w6l.jpg",
     altText: "Dr. Nancy Kaunda - Public Health Specialist"
   },
   {
@@ -57,7 +57,7 @@ export const boardMembers: BoardMember[] = [
     expertise: ["Technology", "Digital Inclusion", "Innovation"],
     emoji: "👨‍💻",
     featured: false,
-    imageUrl: "/michael.jpg",
+    imageUrl: "https://imgur.com/ae7MWy5.jpg",
     altText: "Michael Odhiambo- Technology Entrepreneur"
   },
   {
@@ -69,7 +69,7 @@ export const boardMembers: BoardMember[] = [
     expertise: ["Financial Strategy", "Investment Management", "Risk Assessment"],
     emoji: "💼",
     featured: false,
-    imageUrl: "/victor.jpg",
+    imageUrl: "https://imgur.com/UxRYumO.jpg",
     altText: "Victor Otieno - Financial Strategist"
   },
   {
@@ -81,7 +81,7 @@ export const boardMembers: BoardMember[] = [
     expertise: ["Education Policy", "Curriculum Development", "Teacher Training"],
     emoji: "📚",
     featured: false,
-    imageUrl: "/agiye.jpg",
+    imageUrl: "https://imgur.com/pRwxAZu.jpg",
     altText: "Mr Agiye - Education Policy Expert"
   },
   {
@@ -120,7 +120,7 @@ export const boardCommittees: BoardCommittee[] = [
     expertise: ["Strategic Planning", "Community Development", "Stakeholder Engagement"],
     emoji: "👨‍💼",
     featured: true,
-    imageUrl: "/director.jpg",
+    imageUrl: "https://imgur.com/NFpzNLo.jpg",
     altText: "Director Syphero Okello - Chairperson"
   },
   {
@@ -132,7 +132,7 @@ export const boardCommittees: BoardCommittee[] = [
     expertise: ["Sustainable Agriculture", "Rural Development", "Environmental Conservation"],
     emoji: "👨‍🌾",
     featured: false,
-    imageUrl: "/bill.jpg",
+    imageUrl: "https://imgur.com/43vcZnx.jpg",
     altText: "Bill Clinton - Agricultural Economist"
   },
   {
@@ -144,7 +144,7 @@ export const boardCommittees: BoardCommittee[] = [
     expertise: ["Public Health", "Community Wellness", "Healthcare Access"],
     emoji: "👩‍⚕️",
     featured: false,
-    imageUrl: "/nancy.jpg",
+    imageUrl: "https://imgur.com/2vr0w6l.jpg",
     altText: "Dr. Nancy Kaunda - Public Health Specialist"
   },
   {
@@ -156,7 +156,7 @@ export const boardCommittees: BoardCommittee[] = [
     expertise: ["Technology", "Digital Inclusion", "Innovation"],
     emoji: "👨‍💻",
     featured: false,
-    imageUrl: "/michael.jpg",
+    imageUrl: "https://imgur.com/ae7MWy5.jpg",
     altText: "Michael Odhiambo- Technology Entrepreneur"
   },
   {
@@ -168,7 +168,7 @@ export const boardCommittees: BoardCommittee[] = [
     expertise: ["Financial Strategy", "Investment Management", "Risk Assessment"],
     emoji: "💼",
     featured: false,
-    imageUrl: "/victor.jpg",
+    imageUrl: "https://imgur.com/UxRYumO.jpg",
     altText: "Victor Otieno - Financial Strategist"
   },
   {
@@ -180,7 +180,7 @@ export const boardCommittees: BoardCommittee[] = [
     expertise: ["Education Policy", "Curriculum Development", "Teacher Training"],
     emoji: "📚",
     featured: false,
-    imageUrl: "/agiye.jpg",
+    imageUrl: "https://imgur.com/pRwxAZu.jpg",
     altText: "Mr Agiye - Education Policy Expert"
   },
   {

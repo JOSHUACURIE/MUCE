@@ -12,7 +12,7 @@ const Videos: React.FC = () => {
       duration: "5:30",
       views: "1.2K views",
       date: "2 weeks ago",
-      image: photos.find(p => p.id === 2)?.imageUrl || "/class.jpg" // Classroom Learning
+      image: photos.find(p => p.id === 2)?.imageUrl || "https://imgur.com/yxtuJWT.jpg" // Classroom Learning
     },
     {
       id: 2,
@@ -21,7 +21,7 @@ const Videos: React.FC = () => {
       duration: "8:15",
       views: "2.1K views",
       date: "1 month ago",
-      image: photos.find(p => p.id === 4)?.imageUrl || "/vocational.jpg" // Vocational Training
+      image: photos.find(p => p.id === 4)?.imageUrl || "https://imgur.com/iq76XbS.jpg" // Vocational Training
     },
     {
       id: 3,
@@ -30,7 +30,7 @@ const Videos: React.FC = () => {
       duration: "12:45",
       views: "3.5K views",
       date: "2 months ago",
-      image: photos.find(p => p.id === 6)?.imageUrl || "/tree.jpg" // Community Tree Planting
+      image: photos.find(p => p.id === 6)?.imageUrl || "https://imgur.com/ho5qaPr.jpg" // Community Tree Planting
     },
     {
       id: 4,
@@ -48,7 +48,7 @@ const Videos: React.FC = () => {
       duration: "10:10",
       views: "4.2K views",
       date: "4 months ago",
-      image: photos.find(p => p.id === 11)?.imageUrl || "/women.jpg" // Health Education
+      image: photos.find(p => p.id === 11)?.imageUrl || "https://imgur.com/J0jipYe.jpg" // Health Education
     },
     {
       id: 6,
@@ -57,7 +57,7 @@ const Videos: React.FC = () => {
       duration: "7:35",
       views: "2.9K views",
       date: "5 months ago",
-      image: photos.find(p => p.id === 12)?.imageUrl || "/sports.jpg" // Youth Sports
+      image: photos.find(p => p.id === 12)?.imageUrl || "https://imgur.com/PqY2TVm.jpg" // Youth Sports
     }
   ];
 
@@ -68,21 +68,21 @@ const Videos: React.FC = () => {
       title: "Education Programs",
       description: "Classroom transformations, scholarship stories, and learning initiatives",
       count: "12 videos",
-      image: photoCategories.find(c => c.id === 1)?.coverImage || "/classroom.jpg"
+      image: photoCategories.find(c => c.id === 1)?.coverImage || "https://imgur.com/Wmf0peo.jpg"
     },
     {
       icon: "💼",
       title: "Economic Empowerment",
       description: "Entrepreneurship success stories and vocational training highlights",
       count: "8 videos",
-      image: photoCategories.find(c => c.id === 2)?.coverImage || "/economic.jpg"
+      image: photoCategories.find(c => c.id === 2)?.coverImage || "https://imgur.com/yIUnpLG.jpg"
     },
     {
       icon: "🌱",
       title: "Environmental Projects",
       description: "Sustainability initiatives and community conservation efforts",
       count: "6 videos",
-      image: photoCategories.find(c => c.id === 3)?.coverImage || "/environment.jpg"
+      image: photoCategories.find(c => c.id === 3)?.coverImage || "https://imgur.com/0hR9jCw.jpg"
     }
 
   ];
@@ -148,8 +148,7 @@ const Videos: React.FC = () => {
   <div className="facebook-videos-grid">
     <FacebookVideo videoUrl="https://www.facebook.com/reel/2329624127499180/" />
     <FacebookVideo videoUrl="https://www.facebook.com/reel/1335377031572278/" />
-     <FacebookVideo videoUrl="https://www.facebook.com/reel/1335377031572278/" />
-      
+     
   </div>
 </section>
 

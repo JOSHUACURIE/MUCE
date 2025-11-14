@@ -37,42 +37,42 @@ export const photoCategories: Category[] = [
     name: "Education",
     description: "Classroom moments, learning activities, and educational events",
     photoCount: 120,
-    coverImage: "/classroom.jpg"
+    coverImage: "https://imgur.com/Wmf0peo.jpg"
   },
   {
     id: 2,
     name: "Economic Empowerment",
     description: "Business training, entrepreneurship, and livelihood programs",
     photoCount: 85,
-    coverImage: "/economic.jpg"
+    coverImage: "https://imgur.com/yIUnpLG.jpg"
   },
   {
     id: 3,
     name: "Environment & Sustainability",
     description: "Conservation projects, tree planting, and clean energy initiatives",
     photoCount: 65,
-    coverImage: "/environment.jpg"
+    coverImage: "https://imgur.com/0hR9jCw.jpg"
   },
   {
     id: 4,
     name: "Community Events",
     description: "Festivals, meetings, and community gatherings",
     photoCount: 200,
-    coverImage: "/community.jpg"
+    coverImage: "https://imgur.com/t6JG34b.jpg"
   },
   {
     id: 5,
     name: "Health & Wellness",
     description: "Medical camps, health education, and wellness programs",
     photoCount: 75,
-    coverImage: "/health.jpg"
+    coverImage: "https://imgur.com/oAMorAQ.jpg"
   },
   {
     id: 6,
     name: "Youth Programs",
     description: "Youth empowerment, sports, and skill development",
     photoCount: 90,
-    coverImage: "/yudhe.jpg"
+    coverImage: "https://imgur.com/4XeWm6T.jpg"
   }
 ];
 
@@ -82,7 +82,7 @@ export const photoAlbums: Album[] = [
     id: 1,
     title: "Annual Community Festival 2024",
     description: "Celebrating another year of community achievements and milestones",
-    coverImage: "/annual.jpg",
+    coverImage: "https://imgur.com/GdyAgXz.jpg",
     photoCount: 45,
     date: "2024-03-15",
     category: "Community Events",
@@ -92,7 +92,7 @@ export const photoAlbums: Album[] = [
     id: 2,
     title: "Education Transformation",
     description: "Documenting our educational initiatives and student success stories",
-    coverImage: "/transformation.jpg",
+    coverImage: "https://imgur.com/uOOuZ4n.jpg",
     photoCount: 45,
     date: "2024-03-10",
     category: "Education",
@@ -102,7 +102,7 @@ export const photoAlbums: Album[] = [
     id: 3,
     title: "Women Empowerment",
     description: "Empowering women through skill development and entrepreneurship",
-    coverImage: "/women.jpg",
+    coverImage: "https://imgur.com/J0jipYe.jpg",
     photoCount: 32,
     date: "2024-02-28",
     category: "Economic Empowerment",
@@ -112,7 +112,7 @@ export const photoAlbums: Album[] = [
     id: 4,
     title: "Green Communities",
     description: "Environmental conservation and sustainability projects",
-    coverImage: "/green.jpg",
+    coverImage: "https://imgur.com/pSpeXgf.jpg",
     photoCount: 28,
     date: "2024-02-15",
     category: "Environment & Sustainability",
@@ -122,7 +122,7 @@ export const photoAlbums: Album[] = [
     id: 5,
     title: "Annual Events 2023",
     description: "Highlights from all major events throughout 2023",
-    coverImage: "/sports.jpg",
+    coverImage: "https://imgur.com/PqY2TVm.jpg",
     photoCount: 67,
     date: "2023-12-20",
     category: "Community Events",
@@ -132,7 +132,7 @@ export const photoAlbums: Album[] = [
     id: 6,
     title: "Digital Literacy Program",
     description: "Bridging the digital divide in our communities",
-    coverImage: "/digital.jpg",
+    coverImage: "https://imgur.com/SS9NyXW.jpg",
     photoCount: 38,
     date: "2024-01-25",
     category: "Education",
@@ -148,7 +148,7 @@ export const photos: Photo[] = [
     id: 2,
     title: "Classroom Learning",
     description: "Students engaged in interactive learning session with our volunteers",
-    imageUrl: "/class.jpg",
+    imageUrl: "https://imgur.com/yxtuJWT.jpg",
     category: "Education",
     album: "Education Transformation",
     date: "2024-03-08",
@@ -163,7 +163,7 @@ export const photos: Photo[] = [
     id: 4,
     title: "Vocational Training Session",
     description: "Community members learning tailoring and fashion design skills",
-    imageUrl: "/vocational.jpg",
+    imageUrl: "https://imgur.com/iq76XbS.jpg",
     category: "Economic Empowerment",
     album: "Women Empowerment",
     date: "2024-02-25",
@@ -178,7 +178,7 @@ export const photos: Photo[] = [
     id: 6,
     title: "Community Tree Planting",
     description: "Volunteers planting trees for environmental conservation",
-    imageUrl: "/tree.jpg",
+    imageUrl: "https://imgur.com/ho5qaPr.jpg",
     category: "Environment & Sustainability",
     album: "Green Communities",
     date: "2024-02-12",
@@ -190,7 +190,7 @@ export const photos: Photo[] = [
     id: 7,
     title: "Clean Energy Workshop",
     description: "Demonstrating solar power solutions for rural households",
-    imageUrl: "/energy.jpg",
+    imageUrl: "https://imgur.com/lPtfYfH.jpg",
     category: "Environment & Sustainability",
     album: "Green Communities",
     date: "2024-02-08",
@@ -204,7 +204,7 @@ export const photos: Photo[] = [
     id: 8,
     title: "Cultural Festival Performance",
     description: "Traditional dancers performing at annual community festival",
-    imageUrl: "/sing.jpg",
+    imageUrl: "https://imgur.com/3dp5xc7.jpg",
     category: "Community Events",
     album: "Annual Community Festival 2024",
     date: "2024-03-15",
@@ -216,7 +216,7 @@ export const photos: Photo[] = [
     id: 9,
     title: "Community Meeting",
     description: "Residents discussing community development projects",
-    imageUrl: "/communit.jpg",
+    imageUrl: "https://imgur.com/uqSP2xp.jpg",
     category: "Community Events",
     album: "Annual Events 2023",
     date: "2023-11-10",
@@ -230,7 +230,7 @@ export const photos: Photo[] = [
     id: 11,
     title: "Health Education Session",
     description: "Community health worker educating residents about preventive healthcare",
-    imageUrl: "/women.jpg",
+    imageUrl: "https://imgur.com/J0jipYe.jpg",
     category: "Health & Wellness",
     album: "Health Outreach 2024",
     date: "2024-02-16",
@@ -244,7 +244,7 @@ export const photos: Photo[] = [
     id: 12,
     title: "Youth Sports Tournament",
     description: "Young athletes competing in community sports tournament",
-    imageUrl: "/sports.jpg",
+    imageUrl: "https://imgur.com/PqY2TVm.jpg",
     category: "Youth Programs",
     album: "Youth Development 2024",
     date: "2024-01-30",
@@ -256,7 +256,7 @@ export const photos: Photo[] = [
     id: 13,
     title: "Leadership Training",
     description: "Young leaders developing skills for community impact",
-    imageUrl: "/leaders.jpg",
+    imageUrl: "https://imgur.com/lPtfYfH.jpg",
     category: "Youth Programs",
     album: "Youth Development 2024",
     date: "2024-01-25",

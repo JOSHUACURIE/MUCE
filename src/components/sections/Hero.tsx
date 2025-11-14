@@ -19,61 +19,61 @@ const heroImages: HeroImage[] = [
   },
   {
     id: 2,
-    url: '/transformation.jpg',
+    url: 'https://imgur.com/uOOuZ4n.jpg',
     alt: 'Education transformation initiatives'
   
   },
   {
     id: 3,
-    url: '/sf.jpg',
+    url: 'https://imgur.com/5ytiBT5.jpg',
     alt: 'Women empowerment programs'
    
   },
   {
     id: 4,
-    url: '/green.jpg',
+    url: 'https://imgur.com/pSpeXgf.jpg',
     alt: 'Green community projects'
     
   },
   {
     id: 5,
-    url: '/sports.jpg',
+    url: 'https://imgur.com/PqY2TVm.jpg',
     alt: 'Youth sports activities'
     
   },
   {
     id: 6,
-    url: '/digital.jpg',
+    url: 'https://imgur.com/SS9NyXW.jpg',
     alt: 'Digital literacy training'
   
   },
   {
     id: 7,
-    url: '/class.jpg',
+    url: 'https://imgur.com/yxtuJWT.jpg',
     alt: 'Classroom learning session'
     
   },
   {
     id: 8,
-    url: '/vocational.jpg',
+    url: 'https://imgur.com/iq76XbS.jpg',
     alt: 'Vocational training workshop'
     
   },
   {
     id: 9,
-    url: '/tree.jpg',
+    url: 'https://imgur.com/ho5qaPr.jpg',
     alt: 'Community tree planting activity'
  
   },
   {
     id: 10,
-    url: '/energy.jpg',
+    url: 'https://imgur.com/lPtfYfH.jpg',
     alt: 'Clean energy workshop'
    
   },
   {
     id: 11,
-    url: '/sing.jpg',
+    url: 'https://imgur.com/3dp5xc7.jpg',
     alt: 'Cultural festival performance'
     
   },
@@ -85,49 +85,49 @@ const heroImages: HeroImage[] = [
   },
   {
     id: 13,
-    url: '/pic.jpg',
+    url: 'https://imgur.com/VyD3mee.jpg',
     alt: 'Youth leadership training'
 
   },
   {
     id: 14,
-    url: '/classroom.jpg',
+    url: 'https://imgur.com/Wmf0peo.jpg',
     alt: 'Education category cover'
     
   },
   {
     id: 15,
-    url: '/economic.jpg',
+    url: 'https://imgur.com/yIUnpLG.jpg',
     alt: 'Economic empowerment cover'
 
   },
   {
     id: 16,
-    url: '/environment.jpg',
+    url: 'https://imgur.com/0hR9jCw.jpg',
     alt: 'Environment sustainability cover'
    
   },
   {
     id: 17,
-    url: '/community.jpg',
+    url: 'https://imgur.com/Sg5vJT1.jpg',
     alt: 'Community events cover'
   
   },
   {
     id: 18,
-    url: '/health.jpg',
+    url: 'https://imgur.com/oAMorAQ.jpg',
     alt: 'Health and wellness programs'
    
   },
   {
     id: 19,
-    url: '/yudhe.jpg',
+    url: 'https://imgur.com/4XeWm6T',
     alt: 'Youth development programs'
    
   },
   {
     id: 20,
-    url: '/sa.jpg',
+    url: 'https://imgur.com/fQ56AdA.jpg',
     alt: 'Millimani United background'
 
   }
@@ -173,7 +173,7 @@ const Hero: React.FC = () => {
       <div 
         className="hero-background"
         style={{
-          backgroundImage: `url('/sc.jpg')`,
+          backgroundImage: `url('https://imgur.com/VopEzmN.jpg')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',

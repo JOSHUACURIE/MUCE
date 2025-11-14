@@ -1,12 +1,11 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import '../styles/globals.css';
 import { Link } from 'react-router-dom';
-import {  photoAlbums, photoCategories,  getRecentPhotos } from '../data/images';
+import { photoAlbums, photoCategories, getRecentPhotos } from '../data/images';
 
 const Photos: React.FC = () => {
-  const featuredAlbum = photoAlbums.find(album => album.featured);
-  const recentPhotos = getRecentPhotos(9);
- 
+  const featuredAlbum = useMemo(() => photoAlbums.find(album => album.featured), []);
+  const recentPhotos = useMemo(() => getRecentPhotos(9), []);
 
   return (
     <div className="page-container">
@@ -80,7 +79,7 @@ const Photos: React.FC = () => {
                 <div className="category-content">
                   <h3>{category.name}</h3>
                   <p>{category.description}</p>
-                  <span className="photo-count">{category.photoCount} photos</span>
+                 
                 </div>
               </div>
             ))}

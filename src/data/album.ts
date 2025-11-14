@@ -18,75 +18,129 @@ export interface Album {
 // Common image paths
 const IMAGE_PATHS = {
   COVERS: {
-    MAZINGIRA: "/mazingira.jpg",
-    TRANSFORMATION: "/transformation.jpg",
-    WOMEN: "/women.jpg",
-    GREEN: "/green.jpg",
-    SPORTS: "/sports.jpg",
-    DIGITAL: "/digital.jpg",
-    CLEANING: "/work1.jpg"
+    MAZINGIRA: "https://imgur.com/TiPsWoC.jpg",
+    TRANSFORMATION: "https://imgur.com/uOOuZ4n.jpg",
+    WOMEN: "https://imgur.com/J0jipYe.jpg",
+    GREEN: "https://imgur.com/pSpeXgf.jpg",
+    SPORTS: "https://imgur.com/PqY2TVm.jpg",
+    DIGITAL: "https://imgur.com/SS9NyXW.jpg",
+    CLEANING: "https://imgur.com/eGt9Kqv.jpg"
   },
   ALBUMS: {
-    ENERGY: "/energy.jpg",
-    CLASS: "/class.jpg",
-    VOCATIONAL: "/vocational.jpg",
-    TREE: "/tree.jpg",
-    COMMUNITY: "/communit.jpg",
-    LEADERS: "/leaders.jpg"
+    ENERGY: "https://imgur.com/lPtfYfH.jpg",
+    CLASS: "https://imgur.com/yxtuJWT.jpg",
+    VOCATIONAL: "https://imgur.com/iq76XbS.jpg",
+    TREE: "https://imgur.com/ho5qaPr.jpg",
+    COMMUNITY: "https://imgur.com/TJuwh3J.jpg",
+    LEADERS: "https://imgur.com/rDHYb9Y.jpg"
   },
-  // Environment cleaning work images - all 36 images
+
   CLEANING: {
-    WORK1: "/work1.jpg",
-    WORK2: "/work2.jpg",
-    WORK3: "/work3.jpg",
-    WORK4: "/work4.jpg",
-    WORK5: "/work5.jpg",
-    WORK6: "/work6.jpg",
-    WORK7: "/work7.jpg",
-    WORK8: "/work8.jpg",
-    WORK9: "/work9.jpg",
-    WORK10: "/work10.jpg",
-    WORK11: "/work11.jpg",
-    WORK12: "/work12.jpg",
-    WORK13: "/work13.jpg",
-    WORK14: "/work14.jpg",
-    WORK15: "/work15.jpg",
-    WORK16: "/work16.jpg",
-    WORK17: "/work17.jpg",
-    WORK18: "/work18.jpg",
-    WORK19: "/work19.jpg",
-    WORK20: "/work20.jpg",
-    WORK21: "/work21.jpg",
-    WORK22: "/work22.jpg",
-    WORK23: "/work23.jpg",
-    WORK24: "/work24.jpg",
-    WORK25: "/work25.jpg",
-    WORK26: "/work26.jpg",
-    WORK27: "/work27.jpg",
-    WORK28: "/work28.jpg",
-    WORK29: "/work29.jpg",
-    WORK30: "/work30.jpg",
-    WORK31: "/work31.jpg",
-    WORK32: "/work32.jpg",
-    WORK33: "/work33.jpg",
-    WORK34: "/work34.jpg",
-    WORK35: "/work35.jpg",
-    WORK36: "/work36.jpg"
+    WORK1: "https://imgur.com/eGt9Kqv.jpg",
+    WORK2: "https://imgur.com/aNFFWhb.jpg",
+    WORK3: "https://imgur.com/dN33KQc.jpg",
+    WORK4: "https://imgur.com/7AwvxYS.jpg",
+    WORK5: "https://imgur.com/YL7IKdR.jpg",
+    WORK6: "https://imgur.com/YL7IKdR.jpg",
+    WORK7: "https://imgur.com/ltT1IhX.jpg",
+    WORK8: "https://imgur.com/wQ1IKso.jpg",
+    WORK9: "https://imgur.com/5qS5MMa.jpg",
+    WORK10: "https://imgur.com/TelkQ2y.jpg",
+    WORK11: "https://imgur.com/KZiaX0d.jpg",
+    WORK12: "https://imgur.com/YzSw6nV.jpg",
+    WORK13: "https://imgur.com/M4TStqy.jpg",
+    WORK14: "https://imgur.com/Az1F2lX.jpg",
+    WORK15: "https://imgur.com/uB3dZl1.jpg",
+    WORK16: "https://imgur.com/YCJcvJw.jpg",
+    WORK17: "https://imgur.com/K0P0Hr5.jpg",
+    WORK18: "https://imgur.com/NMiuWrl.jpg",
+    WORK19: "https://imgur.com/yF8BSoL.jpg",
+    WORK20: "https://imgur.com/4BB5EhB.jpg",
+    WORK21: "https://imgur.com/PbjMwUY.jpg",
+    WORK22: "https://imgur.com/ExgBZwZ.jpg",
+    WORK23: "https://imgur.com/NwHWlTj.jpg",
+    WORK24: "https://imgur.com/m45N27S.jpg",
+    WORK25: "https://imgur.com/X4R53vN.jpg",
+    WORK26: "https://imgur.com/y3dJ5Aj.jpg",
+    WORK27: "https://imgur.com/RV9eTRF.jpg",
+    WORK28: "https://imgur.com/Etw6ikq.jpg",
+    WORK29: "https://imgur.com/kpND1mt.jpg",
+    WORK30: "https://imgur.com/cO5VBTM.jpg",
+    WORK31: "https://imgur.com/4oJMKcm.jpg",
+    WORK32: "https://imgur.com/OawI4Ic.jpg",
+    WORK33: "https://imgur.com/g7QSKP6.jpg",
+    WORK34: "https://imgur.com/dBH8OKH.jpg",
+    WORK35: "https://imgur.com/Wtf9orq.jpg",
+    WORK36: "https://imgur.com/jK9P2bN.jpg",
+ 
+    WORK37: "https://imgur.com/bJg8TBq.jpg",
+    WORK38: "https://imgur.com/FW2VZYV.jpg",
+    WORK39: "https://imgur.com/AvMlnvY.jpg",
+    WORK40: "https://imgur.com/cADN6xw.jpg",
+    WORK41: "https://imgur.com/mvPkydv.jpg",
+    WORK42: "https://imgur.com/fK98KOJ.jpg",
+    WORK43: "https://imgur.com/m2tbZ4k.jpg",
+    WORK44: "https://imgur.com/LgJ7C6e.jpg",
+    WORK45: "https://imgur.com/o958dop.jpg",
+    WORK46: "https://imgur.com/VVQEA0n.jpg",
+    WORK47: "https://imgur.com/ctzwjI2.jpg",
+    WORK48: "https://imgur.com/ZzY47QF.jpg",
+    WORK49: "https://imgur.com/OyIFvvo.jpg",
+    WORK50: "https://imgur.com/ZnywZ4C.jpg",
+    WORK51: "https://imgur.com/gWcS7uD.jpg",
+    WORK52: "https://imgur.com/OmWQdZB.jpg",
+    WORK53: "https://imgur.com/LdOEd6L.jpg",
+    WORK54: "https://imgur.com/rP0kHqn.jpg",
+    WORK55: "https://imgur.com/lgv8DsK.jpg",
+    WORK56: "https://imgur.com/RGZagUx.jpg",
+    WORK57: "https://imgur.com/vWDXvAY.jpg",
+    WORK58: "https://imgur.com/SCdhJpN.jpg",
+    WORK59: "https://imgur.com/9oxLS2V.jpg",
+    WORK60: "https://imgur.com/pvHcuaJ.jpg",
+    WORK61: "https://imgur.com/isTjluU.jpg",
+    WORK62: "https://imgur.com/mLqe9UT.jpg",
+    WORK63: "https://imgur.com/nyaQ65A.jpg",
+    WORK64: "https://imgur.com/KVbeoIW.jpg",
+    WORK65: "https://imgur.com/LaOmHxV5.jpg",
+    WORK66: "https://imgur.com/r0i0pcT.jpg",
+    WORK67: "https://imgur.com/Hk0U6WO.jpg",
+    WORK68: "https://imgur.com/jPGlC9z.jpg",
+    WORK69: "https://imgur.com/UD0WZPu.jpg",
+    WORK70: "https://imgur.com/gh6qDQV.jpg",
+    WORK71: "https://imgur.com/u7GfpHa.jpg",
+    WORK72: "https://imgur.com/S9k8Hzp.jpg"
   },
-  // Additional images
+
   ADDITIONAL: {
-    ANNUAL: "/annual.jpg",
-    SING: "/sing.jpg",
-    HEALTH: "/health.jpg",
-    CLASSROOM: "/classroom.jpg",
-    ECONOMIC: "/economic.jpg",
-    ENVIRONMENT: "/environment.jpg",
-    COMMUNITY_EVENTS: "/community.jpg",
-    YOUTH: "/yudhe.jpg"
+    ANNUAL: "https://imgur.com/GdyAgXz.jpg",
+    SING: "https://imgur.com/V6pLctm.jpg",
+    HEALTH: "https://imgur.com/V6pLctm.jpg",
+    CLASSROOM: "https://imgur.com/Wmf0peo.jpg",
+    ECONOMIC: "https://imgur.com/yIUnpLG.jpg",
+    ENVIRONMENT: "https://imgur.com/0hR9jCw.jpg",
+    COMMUNITY_EVENTS: "https://imgur.com/t6JG34b.jpg",
+    YOUTH: "https://imgur.com/4XeWm6T.jpg"
   }
 } as const;
 
-// Fixed album data with unique IDs and proper mappings
+
+const generateCleaningImages = (): AlbumImage[] => {
+  const images: AlbumImage[] = [];
+  let id = 17; 
+  
+
+  for (let i = 1; i <= 72; i++) {
+    images.push({
+      id: id++,
+      imageUrl: IMAGE_PATHS.CLEANING[`WORK${i}` as keyof typeof IMAGE_PATHS.CLEANING],
+      featured: i === 1 
+    });
+  }
+  
+  return images;
+};
+
+
 export const albums: Album[] = [
   {
     id: 1,
@@ -234,199 +288,18 @@ export const albums: Album[] = [
       }
     ]
   },
-  // NEW: Environment Cleaning Album with ALL 36 images
+ 
   {
     id: 7,
     title: "Community Environment Cleaning",
     coverImage: IMAGE_PATHS.COVERS.CLEANING,
-    photoCount: 36, // Updated to reflect all 36 images
+    photoCount: 72, 
     date: "2025-11-12",
     category: "Environment & Sustainability",
     featured: true,
-    images: [
-      {
-        id: 17,
-        imageUrl: IMAGE_PATHS.CLEANING.WORK1,
-        featured: true
-      },
-      {
-        id: 18,
-        imageUrl: IMAGE_PATHS.CLEANING.WORK2,
-        featured: false
-      },
-      {
-        id: 19,
-        imageUrl: IMAGE_PATHS.CLEANING.WORK3,
-        featured: false
-      },
-      {
-        id: 20,
-        imageUrl: IMAGE_PATHS.CLEANING.WORK4,
-        featured: false
-      },
-      {
-        id: 21,
-        imageUrl: IMAGE_PATHS.CLEANING.WORK5,
-        featured: false
-      },
-      {
-        id: 22,
-        imageUrl: IMAGE_PATHS.CLEANING.WORK6,
-        featured: false
-      },
-      {
-        id: 23,
-        imageUrl: IMAGE_PATHS.CLEANING.WORK7,
-        featured: false
-      },
-      {
-        id: 24,
-        imageUrl: IMAGE_PATHS.CLEANING.WORK8,
-        featured: false
-      },
-      {
-        id: 25,
-        imageUrl: IMAGE_PATHS.CLEANING.WORK9,
-        featured: false
-      },
-      {
-        id: 26,
-        imageUrl: IMAGE_PATHS.CLEANING.WORK10,
-        featured: false
-      },
-      {
-        id: 27,
-        imageUrl: IMAGE_PATHS.CLEANING.WORK11,
-        featured: false
-      },
-      {
-        id: 28,
-        imageUrl: IMAGE_PATHS.CLEANING.WORK12,
-        featured: false
-      },
-      {
-        id: 29,
-        imageUrl: IMAGE_PATHS.CLEANING.WORK13,
-        featured: false
-      },
-      {
-        id: 30,
-        imageUrl: IMAGE_PATHS.CLEANING.WORK14,
-        featured: false
-      },
-      {
-        id: 31,
-        imageUrl: IMAGE_PATHS.CLEANING.WORK15,
-        featured: false
-      },
-      {
-        id: 32,
-        imageUrl: IMAGE_PATHS.CLEANING.WORK16,
-        featured: false
-      },
-      {
-        id: 33,
-        imageUrl: IMAGE_PATHS.CLEANING.WORK17,
-        featured: false
-      },
-      {
-        id: 34,
-        imageUrl: IMAGE_PATHS.CLEANING.WORK18,
-        featured: false
-      },
-      {
-        id: 35,
-        imageUrl: IMAGE_PATHS.CLEANING.WORK19,
-        featured: false
-      },
-      {
-        id: 36,
-        imageUrl: IMAGE_PATHS.CLEANING.WORK20,
-        featured: false
-      },
-      {
-        id: 37,
-        imageUrl: IMAGE_PATHS.CLEANING.WORK21,
-        featured: false
-      },
-      {
-        id: 38,
-        imageUrl: IMAGE_PATHS.CLEANING.WORK22,
-        featured: false
-      },
-      {
-        id: 39,
-        imageUrl: IMAGE_PATHS.CLEANING.WORK23,
-        featured: false
-      },
-      {
-        id: 40,
-        imageUrl: IMAGE_PATHS.CLEANING.WORK24,
-        featured: false
-      },
-      {
-        id: 41,
-        imageUrl: IMAGE_PATHS.CLEANING.WORK25,
-        featured: false
-      },
-      {
-        id: 42,
-        imageUrl: IMAGE_PATHS.CLEANING.WORK26,
-        featured: false
-      },
-      {
-        id: 43,
-        imageUrl: IMAGE_PATHS.CLEANING.WORK27,
-        featured: false
-      },
-      {
-        id: 44,
-        imageUrl: IMAGE_PATHS.CLEANING.WORK28,
-        featured: false
-      },
-      {
-        id: 45,
-        imageUrl: IMAGE_PATHS.CLEANING.WORK29,
-        featured: false
-      },
-      {
-        id: 46,
-        imageUrl: IMAGE_PATHS.CLEANING.WORK30,
-        featured: false
-      },
-      {
-        id: 47,
-        imageUrl: IMAGE_PATHS.CLEANING.WORK31,
-        featured: false
-      },
-      {
-        id: 48,
-        imageUrl: IMAGE_PATHS.CLEANING.WORK32,
-        featured: false
-      },
-      {
-        id: 49,
-        imageUrl: IMAGE_PATHS.CLEANING.WORK33,
-        featured: false
-      },
-      {
-        id: 50,
-        imageUrl: IMAGE_PATHS.CLEANING.WORK34,
-        featured: false
-      },
-      {
-        id: 51,
-        imageUrl: IMAGE_PATHS.CLEANING.WORK35,
-        featured: false
-      },
-      {
-        id: 52,
-        imageUrl: IMAGE_PATHS.CLEANING.WORK36,
-        featured: false
-      }
-    ]
+    images: generateCleaningImages()
   },
-  // Additional album for Community Events
+
   {
     id: 8,
     title: "Community Health & Wellness",
@@ -437,20 +310,43 @@ export const albums: Album[] = [
     featured: false,
     images: [
       {
-        id: 53,
+        id: 89, 
         imageUrl: IMAGE_PATHS.ADDITIONAL.HEALTH,
         featured: true
       },
       {
-        id: 54,
+        id: 90,
         imageUrl: IMAGE_PATHS.ADDITIONAL.COMMUNITY_EVENTS,
         featured: false
       }
     ]
-  }
+  },
+
+  {
+    id: 9,
+    title: "Tree Planting Initiative 2024",
+    coverImage: IMAGE_PATHS.ALBUMS.TREE,
+    photoCount: 18,
+    date: "2024-04-05",
+    category: "Environment & Sustainability",
+    featured: false,
+    images: [
+      {
+        id: 91,
+        imageUrl: IMAGE_PATHS.ALBUMS.TREE,
+        featured: true
+      },
+      {
+        id: 92,
+        imageUrl: IMAGE_PATHS.CLEANING.WORK1,
+        featured: false
+      }
+    ]
+  },
+  
 ];
 
-// Helper functions
+
 export const getFeaturedAlbums = (): Album[] => albums.filter(album => album.featured);
 
 export const getAlbumsByCategory = (category: string): Album[] => 
@@ -470,7 +366,7 @@ export const getRecentAlbums = (count: number = 6): Album[] =>
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .slice(0, count);
 
-// Extract all unique image file names
+
 export const allImageFiles: string[] = [
   ...new Set([
     ...Object.values(IMAGE_PATHS.COVERS),
@@ -480,7 +376,7 @@ export const allImageFiles: string[] = [
   ])
 ];
 
-// Category cover images
+
 export const categoryCoverImages = {
   "Education": IMAGE_PATHS.ADDITIONAL.CLASSROOM,
   "Economic Empowerment": IMAGE_PATHS.ADDITIONAL.ECONOMIC,
@@ -490,33 +386,33 @@ export const categoryCoverImages = {
   "Youth Programs": IMAGE_PATHS.ADDITIONAL.YOUTH
 };
 
-// NEW: Get environment cleaning images specifically
+
 export const getEnvironmentCleaningImages = (): AlbumImage[] => {
   const cleaningAlbum = albums.find(album => album.id === 7);
   return cleaningAlbum?.images || [];
 };
 
-// NEW: Get albums by featured status with environment cleaning
+
 export const getFeaturedAlbumsWithCleaning = (): Album[] => 
   albums.filter(album => album.featured);
 
-// NEW: Get all environment-related albums
+
 export const getEnvironmentAlbums = (): Album[] => 
   albums.filter(album => album.category === "Environment & Sustainability");
 
-// NEW: Get total photo count across all albums
+
 export const getTotalPhotoCount = (): number => 
   albums.reduce((total, album) => total + album.photoCount, 0);
 
-// NEW: Get albums by date range
+
 export const getAlbumsByDateRange = (startDate: string, endDate: string): Album[] => 
   albums.filter(album => album.date >= startDate && album.date <= endDate);
 
-// NEW: Get unique categories
+
 export const getUniqueCategories = (): string[] => 
   [...new Set(albums.map(album => album.category))];
 
-// NEW: Get random featured image
+
 export const getRandomFeaturedImage = (): string => {
   const featuredImages = albums.flatMap(album => 
     album.images.filter(img => img.featured).map(img => img.imageUrl)
@@ -524,7 +420,7 @@ export const getRandomFeaturedImage = (): string => {
   return featuredImages[Math.floor(Math.random() * featuredImages.length)] || IMAGE_PATHS.COVERS.MAZINGIRA;
 };
 
-// NEW: Get image by ID
+
 export const getImageById = (imageId: number): AlbumImage | undefined => {
   for (const album of albums) {
     const image = album.images.find(img => img.id === imageId);
@@ -532,3 +428,31 @@ export const getImageById = (imageId: number): AlbumImage | undefined => {
   }
   return undefined;
 };
+
+
+export const getCleaningImagesCount = (): number => {
+  const cleaningAlbum = albums.find(album => album.id === 7);
+  return cleaningAlbum?.images.length || 0;
+};
+
+
+export const getAlbumsWithMostImages = (count: number = 5): Album[] => 
+  [...albums]
+    .sort((a, b) => b.images.length - a.images.length)
+    .slice(0, count);
+
+
+export const searchAlbums = (query: string): Album[] => 
+  albums.filter(album => 
+    album.title.toLowerCase().includes(query.toLowerCase())
+  );
+
+
+export const getImagesByCategory = (category: string): AlbumImage[] => 
+  albums
+    .filter(album => album.category === category)
+    .flatMap(album => album.images);
+
+
+export const getTotalUniqueImagesCount = (): number => 
+  new Set(albums.flatMap(album => album.images.map(img => img.imageUrl))).size;
