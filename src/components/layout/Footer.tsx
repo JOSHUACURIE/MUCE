@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
                 <span className="contact-icon">
                   <FaEnvelope size={22} />
                 </span>
-                <span>millmanimitedcommunityempower@gmail.com</span>
+                <span>milimaniunitedcommunityempower@gmail.com</span>
               </div>
 
               <div className="contact-item">

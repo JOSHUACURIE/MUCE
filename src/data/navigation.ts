@@ -50,8 +50,8 @@ export const navigationData: NavigationData = {
       id: 'opportunities',
       label: 'Opportunities',
       children: [
-        { id: 'jobs', label: 'Jobs', href: '/opportunities/jobs' },
-        { id: 'proposals', label: 'Proposals', href: '/opportunities/proposals' }
+        { id: 'volunteer', label: 'Volunteer', href: '/opportunities/jobs' }
+       
       ]
     },
     {
