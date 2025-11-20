@@ -24,6 +24,7 @@ const IMAGE_PATHS = {
     GREEN: "https://imgur.com/pSpeXgf.jpg",
     SPORTS: "https://imgur.com/PqY2TVm.jpg",
     DIGITAL: "https://imgur.com/SS9NyXW.jpg",
+    
     CLEANING: "https://imgur.com/eGt9Kqv.jpg"
   },
   ALBUMS: {
@@ -246,20 +247,119 @@ export const albums: Album[] = [
     title: "Digital Literacy Program",
     coverImage: IMAGE_PATHS.COVERS.DIGITAL,
     photoCount: 38,
-    date: "2024-01-25",
+    date: "2025-08-25",
     category: "Education",
     featured: false,
     images: [
+       {
+      id: 1,
+      imageUrl: IMAGE_PATHS.COVERS.DIGITAL,
+      featured: true
+    },
+    {
+      id: 2,
+      imageUrl: IMAGE_PATHS.ALBUMS.CLASS,
+      featured: false
+    },
+    {
+      id: 3,
+      imageUrl: "https://i.imgur.com/IIrUHis.jpg",
+      featured: false
+    },
+    {
+      id: 4,
+      imageUrl: "https://i.imgur.com/E3fyO4l.jpg",
+      featured: true
+    },
+    {
+      id: 5,
+      imageUrl: "https://i.imgur.com/v4BXalc.jpg",
+      featured: false
+    },
+    {
+      id: 6,
+      imageUrl: "https://i.imgur.com/z58tYMy.jpg",
+      featured: false
+    },
+    {
+      id: 7,
+      imageUrl: "https://imgur.com/YxwNIjx.jpg",
+      featured: true
+    },
+    {
+      id: 8,
+      imageUrl: "https://i.imgur.com/QDjRbm8.jpg",
+      featured: false
+    },
+    {
+      id: 9,
+      imageUrl: "https://i.imgur.com/IIrUHis.jpg",
+      featured: false
+    },
+    {
+      id: 10,
+      imageUrl: "https://i.imgur.com/TJfJUH9.jpg",
+      featured: false
+    },
+    {
+      id: 11,
+      imageUrl: "https://i.imgur.com/fpvoayH.jpg",
+      featured: true
+    },
+    {
+      id: 12,
+      imageUrl: "https://i.imgur.com/uhWFds4.jpg",
+      featured: true
+    },
+    {
+      id: 13,
+      imageUrl: "https://i.imgur.com/T9BzoGE.jpg",
+      featured: false
+    },
+    {
+      id: 14,
+      imageUrl: "https://i.imgur.com/T9BzoGE.jpg",
+      featured: false
+    },
       {
-        id: 12,
-        imageUrl: IMAGE_PATHS.COVERS.DIGITAL,
-        featured: true
-      },
-      {
-        id: 13,
-        imageUrl: IMAGE_PATHS.ALBUMS.CLASS,
-        featured: false
-      }
+      id: 15,
+      imageUrl: "https://imgur.com/gXx7ikn.jpg",
+      featured: false
+    },
+       {
+      id: 16,
+      imageUrl: "https://imgur.com/J2YPB9d.jpg",
+      featured: false
+    },
+       {
+      id: 17,
+      imageUrl: "https://imgur.com/YPU0Zuz.jpg",
+      featured: false
+    },
+        {
+      id: 18,
+      imageUrl: "https://imgur.com/pEItaWy.jpg",
+      featured: false
+    },
+      
+        {
+      id: 19,
+      imageUrl: "https://imgur.com/XJZNSiU.jpg",
+      featured: false
+    },
+      
+        {
+      id: 20,
+      imageUrl: "https://imgur.com/Ns0ZlMI.jpg",
+      featured: false
+    },
+             {
+      id: 21,
+      imageUrl: "https://imgur.com/UHZGY3k.jpg",
+      featured: false
+    },
+         
+      
     ]
   },
   {

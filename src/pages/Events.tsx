@@ -15,7 +15,7 @@ const Events: React.FC = () => {
       </div>
 
       <div className="page-content">
-        {/* Featured Event */}
+      
         <section className="content-section">
           <div className="section-header">
             <h2>Featured Event</h2>
@@ -70,25 +70,25 @@ const Events: React.FC = () => {
           </div>
           
           <div className="upcoming-events">
-            {/* Event 1 */}
+            
             <div className="event-card">
               <div className="event-date-small">
-                <div className="month">MAR</div>
-                <div className="day">28</div>
+                <div className="month">NOV</div>
+                <div className="day">20-21</div>
               </div>
               <div className="event-info">
                 <div className="event-type">Workshop</div>
-                <h3>Digital Skills for Entrepreneurs</h3>
+                <h3>Digital Marketting and Soft SKills</h3>
                 <div className="event-meta-small">
-                  <span>🕒 2:00 PM - 5:00 PM</span>
-                  <span>📍 Community Tech Hub</span>
+                  <span>🕒2:00 PM - 5:00 PM</span>
+                  <br></br>
+                  <span>📍 Renja Village, Kisumu East</span>
                 </div>
                 <p>
-                  Hands-on training session on digital tools and platforms for 
-                  small business owners and aspiring entrepreneurs.
+                  Hands-on training session on digital tools and platforms by AJIRA digital.
                 </p>
                 <div className="event-stats">
-                  <span>🎯 30 seats available</span>
+                  <span>🎯 100+ seats available</span>
                   <span>💰 Free admission</span>
                 </div>
                 <button className="event-action">Register</button>
@@ -96,10 +96,10 @@ const Events: React.FC = () => {
             </div>
 
            
-            {/* Event 3 */}
+ 
             <div className="event-card">
               <div className="event-date-small">
-                <div className="month">APR</div>
+                <div className="month">DEC</div>
                 <div className="day">12</div>
               </div>
               <div className="event-info">
@@ -121,10 +121,10 @@ const Events: React.FC = () => {
               </div>
             </div>
 
-            {/* Event 4 */}
+        
             <div className="event-card">
               <div className="event-date-small">
-                <div className="month">APR</div>
+                <div className="month">JAN</div>
                 <div className="day">20</div>
               </div>
               <div className="event-info">
@@ -148,7 +148,7 @@ const Events: React.FC = () => {
           </div>
         </section>
 
-        {/* Past Events */}
+
         <section className="content-section">
           <div className="section-header">
             <h2>Past Events</h2>
@@ -160,9 +160,9 @@ const Events: React.FC = () => {
           
           <div className="past-events">
             <div className="past-event">
-              <div className="event-year">2024</div>
+              <div className="event-year">2025</div>
               <h3>Environmental Conservation Symposium</h3>
-              <p>February 15, 2024 • 250 attendees</p>
+              <p>February 15, 2025 • 250 attendees</p>
               <div className="event-resources">
                 <button className="resource-btn">📊 Presentations</button>
                 <button className="resource-btn">📷 Photos</button>
@@ -171,9 +171,9 @@ const Events: React.FC = () => {
             </div>
             
             <div className="past-event">
-              <div className="event-year">2023</div>
+              <div className="event-year">2025</div>
               <h3>Annual Stakeholder Meeting</h3>
-              <p>December 5, 2023 • 180 attendees</p>
+              <p>January 5, 2025 • 180 attendees</p>
               <div className="event-resources">
                 <button className="resource-btn">📊 Presentations</button>
                 <button className="resource-btn">📄 Report</button>
@@ -184,7 +184,7 @@ const Events: React.FC = () => {
             <div className="past-event">
               <div className="event-year">2023</div>
               <h3>Education Innovation Fair</h3>
-              <p>October 20, 2023 • 300+ attendees</p>
+              <p>October 20, 2024 • 300+ attendees</p>
               <div className="event-resources">
                 <button className="resource-btn">📊 Presentations</button>
                 <button className="resource-btn">📷 Photos</button>
@@ -194,7 +194,6 @@ const Events: React.FC = () => {
           </div>
         </section>
 
-        {/* Event Calendar */}
         <section className="content-section">
           <div className="section-header">
             <h2>Event Calendar</h2>
@@ -221,7 +220,7 @@ const Events: React.FC = () => {
                 <div className="day-header">Sat</div>
               </div>
               <div className="calendar-days">
-                {/* This would be dynamically generated in a real app */}
+               
                 <div className="day empty"></div>
                 <div className="day empty"></div>
                 <div className="day">
@@ -266,13 +265,13 @@ const Events: React.FC = () => {
                   <div className="day-number">15</div>
                   <div className="event-dot">Transformation Summit</div>
                 </div>
-                {/* ... more days */}
+
               </div>
             </div>
           </div>
         </section>
 
-        {/* Host an Event CTA */}
+    
         <section className="cta-section">
           <div className="cta-content">
             <h2>Host an Event With Us</h2>

@@ -5749,10 +5749,11 @@ grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
   background: var(--white);
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
+
   transition: all 0.3s ease;
   display: grid;
-  grid-template-columns: 80px 1fr;
+ 
+ 
 }
 
 .event-card:hover {
@@ -9158,7 +9159,7 @@ grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
     font-size: 1.8rem;
   }
 }
-/* Quarterly Reports - Updated for equal height and aligned buttons */
+
 .quarterly-reports {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
