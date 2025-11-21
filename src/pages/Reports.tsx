@@ -48,7 +48,7 @@ const Reports: React.FC = () => {
                   <div className="metric-label">Communities Served</div>
                 </div>
                 <div className="metric">
-                  <div className="metric-value">$2.8M</div>
+                  <div className="metric-value">2.8M</div>
                   <div className="metric-label">Program Investment</div>
                 </div>
                 <div className="metric">

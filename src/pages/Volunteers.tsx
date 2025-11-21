@@ -214,33 +214,8 @@ const Volunteers: React.FC = () => {
       deadline: "2026-01-15",
       duration: "4 months minimum",
       experience: "No experience required"
-    },
-    {
-      id: 7,
-      title: "Administration Volunteer",
-      department: "Operations",
-      location: "Kisumu",
-      commitment: "Full-time",
-      description: "Provide essential administrative support to help our organization run smoothly and efficiently.",
-      requirements: [
-        "Strong organizational skills",
-        "Proficiency with office software",
-        "Attention to detail",
-        "Good communication skills",
-        "Reliable and punctual"
-      ],
-      responsibilities: [
-        "Assist with data entry and record keeping",
-        "Help with filing and document organization",
-        "Support mail processing and distribution",
-        "Answer phones and greet visitors",
-        "Help prepare meeting materials"
-      ],
-        postedDate: "2025-11-15",
-      deadline: "2026-01-15",
-      duration: "6 months minimum",
-      experience: "No experience required"
     }
+   
   ];
 
   const positionOptions = [
