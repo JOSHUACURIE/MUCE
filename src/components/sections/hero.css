@@ -194,7 +194,12 @@
   .slider-container {
     padding: 0 1rem;
   }
-  
+ .hero-background {
+    height: 80vh;     /* Adjusted for tablets */
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+  }
  
  
 }

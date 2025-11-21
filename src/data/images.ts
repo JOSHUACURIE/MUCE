@@ -65,7 +65,7 @@ export const photoCategories: Category[] = [
     name: "Health & Wellness",
     description: "Medical camps, health education, and wellness programs",
     photoCount: 75,
-    coverImage: "https://imgur.com/oAMorAQ.jpg"
+    coverImage: "https://imgur.com/GdyAgXz.jpg"
   },
   {
     id: 6,

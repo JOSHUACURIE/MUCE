@@ -102,7 +102,7 @@ font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
   flex-wrap: wrap;
 }
 
-.cta-button {
+.ca-button {
   padding: 0.75rem 2rem;
   border-radius: 6px;
   text-decoration: none;
@@ -111,75 +111,81 @@ font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
   border: 2px solid transparent;
 }
 
-.cta-primary {
+.ca-primary {
   background-color: var(--earth-green);
   color: var(--white);
 }
 
-.cta-primary:hover {
+.ca-primary:hover {
   background-color: #1e3d1a;
   transform: translateY(-2px);
 }
 
-.cta-secondary {
+.ca-secondary {
   background-color: transparent;
   color: var(--earth-green);
   border-color: var(--earth-green);
 }
 
-.cta-secondary:hover {
+.ca-secondary:hover {
   background-color: var(--earth-green);
   color: var(--white);
   transform: translateY(-2px);
 }
 
-.cta-outline {
+.ca-outline {
   background-color: transparent;
   color: var(--earth-green);
   border-color: var(--earth-green);
 }
 
-.cta-outline:hover {
+.ca-outline:hover {
   background-color: var(--earth-green);
   color: var(--white);
   transform: translateY(-2px);
 }
 
 /* Values Sidebar */
-.hero-values {
-  background: #f8f8f8;
-  border-radius: 12px;
-  padding: 2rem;
-  border: 1px solid #e0e0e0;
-}
 
-.values-title {
+ .hero-value {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  border-radius: 16px;
+  padding: 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+  
+
+
+.value-title {
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
   color: var(--earth-green);
   text-align: center;
 }
 
-.values-list {
+.value-list {
   list-style: none;
   padding: 0;
   margin: 0;
+  
 }
-
-.value-item {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 1rem;
-  padding: 0.75rem;
-  border-radius: 6px;
+.value-items {
+  display: flex; 
+  align-items: flex-start; 
+  margin-bottom: 1rem; 
+  padding: 0.75rem; border-radius: 6px; 
   transition: background-color 0.3s ease;
 }
 
-.value-item:hover {
+
+.value-items:hover {
   background: #f0f0f0;
 }
 
-.value-number {
+.value-numbers {
   background: var(--earth-green);
   color: var(--white);
   width: 24px;
@@ -190,16 +196,30 @@ font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
   justify-content: center;
   font-size: 0.8rem;
   font-weight: bold;
-  margin-right: 1rem;
+  margin-right: 0.25rem;
   flex-shrink: 0;
+    margin-left: 2.5rem; 
 }
 
-.value-text {
+.value-texts {
   line-height: 1.4;
   font-size: 0.9rem;
   color: var(--black);
 }
+@media (max-width: 768px){
 
+.hero-value {
+ background: #f8f8f8;
+  backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  border-radius: 16px;
+  padding: 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  text-align: center;
+
+}
+}
 /* Program Pillars */
 .program-pillars {
   background: #f8f8f8;
@@ -1419,70 +1439,6 @@ font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* Core Values Sidebar */
-.hero-values {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(15px);
-  border-radius: 16px;
-  padding: 2.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-}
-
-.values-title {
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
-  color: var(--white);
-  text-align: center;
-  font-weight: 700;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-.values-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.value-item {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 1.2rem;
-  padding: 1rem;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.value-item:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateX(5px);
-}
-
-.value-number {
-  background: var(--white);
-  color: var(--earth-green);
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.9rem;
-  font-weight: bold;
-  margin-right: 1rem;
-  flex-shrink: 0;
-}
-
-.value-text {
-  line-height: 1.5;
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--white);
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-}
-
-/* Program Pillars */
 .program-pillars {
   background: var(--white);
   padding: 4rem 0;
@@ -8918,6 +8874,7 @@ grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
   align-items: center;
   justify-content: center;
   text-align: center;
+  
 }
 
 .management-team-image {
@@ -9099,14 +9056,13 @@ grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
   
   .management-team-photo {
     padding: 1.5rem;
-    flex-direction: row;
-    gap: 1rem;
+  
     justify-content: flex-start;
   }
   
  .management-team-image {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     margin: 0 auto 0 auto; 
     display: block;        
 }

@@ -44,7 +44,7 @@ const WhoWeAre: React.FC = () => {
             <div className="about-story-visual">
               <div className="about-image-wrapper">
                 <img 
-                  src='/history.jpg' 
+                  src='https://imgur.com/d7LOFpR.jpg' 
                   alt="Millimani United History and Journey"
                   className="about-story-image"
                 />

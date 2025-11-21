@@ -313,7 +313,7 @@ export const albums: Album[] = [
     },
     {
       id: 13,
-      imageUrl: "https://i.imgur.com/T9BzoGE.jpg",
+      imageUrl: "https://imgur.com/Ns0ZlMI.jpg",
       featured: false
     },
     {
@@ -328,7 +328,7 @@ export const albums: Album[] = [
     },
        {
       id: 16,
-      imageUrl: "https://imgur.com/J2YPB9d.jpg",
+      imageUrl: "https://imgur.com/YxwNIjx.jpg",
       featured: false
     },
        {
@@ -358,7 +358,48 @@ export const albums: Album[] = [
       imageUrl: "https://imgur.com/UHZGY3k.jpg",
       featured: false
     },
-         
+         //ADDED ONES
+                 {
+      id: 22,
+      imageUrl: "https://imgur.com/eJtumQD.jpg",
+      featured: false
+    },
+               {
+      id: 23,
+      imageUrl: "https://imgur.com/J43Xfiq.jpg",
+      featured: false
+    },
+               {
+      id: 24,
+      imageUrl: "https://imgur.com/R2p0YZM.jpg",
+      featured: false
+    },
+               {
+      id: 25,
+      imageUrl: "https://imgur.com/7anFvUV.jpg",
+      featured: false
+    },
+               {
+      id: 26,
+      imageUrl: "https://imgur.com/CPMMjq9.jpg",
+      featured: false
+    },
+               {
+      id: 27,
+      imageUrl: "https://imgur.com/CPMMjq9.jpg",
+      featured: false
+    },
+               {
+      id: 28,
+      imageUrl: "https://imgur.com/o5STNfo.jpg",
+      featured: false
+    },
+               {
+      id: 29,
+      imageUrl: "https://imgur.com/8JIIzxB.jpg",
+      featured: false
+    },
+       
       
     ]
   },

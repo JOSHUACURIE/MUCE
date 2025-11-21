@@ -173,7 +173,7 @@ const Hero: React.FC = () => {
       <div 
         className="hero-background"
         style={{
-          backgroundImage: `url('https://imgur.com/VopEzmN.jpg')`,
+          backgroundImage: `url('https://imgur.com/ho5qaPr.jpg')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
@@ -209,41 +209,41 @@ const Hero: React.FC = () => {
 
           {/* Call-to-Action Buttons */}
           <div className="hero-actions">
-            <a href="/donate" className="cta-button cta-primary">
+            <a href="/donate" className="ca-button ca-primary">
               Donate Now
             </a>
-            <a href="/about" className="cta-button cta-secondary">
+            <a href="/about" className="ca-button ca-secondary">
               Learn More
             </a>
-            <a href="/contact" className="cta-button cta-outline">
+            <a href="/contact" className="ca-button ca-outline">
               Get Involved
             </a>
           </div>
         </div>
 
         {/* Core Values Sidebar */}
-        <div className="hero-values">
-          <h3 className="values-title">Our Core Values</h3>
-          <ul className="values-list">
-            <li className="value-item">
-              <span className="value-number">1</span>
-              <span className="value-text">Professionalism & Team work</span>
+        <div className="hero-value">
+          <h3 className="value-title">Our Core Values</h3>
+          <ul className="value-list">
+            <li className="value-items">
+              <span className="value-numbers">1</span>
+              <span className="value-texts">Professionalism & Team work</span>
             </li>
-            <li className="value-item">
-              <span className="value-number">2</span>
-              <span className="value-text">Integrity & Accountability</span>
+            <li className="value-items">
+              <span className="value-numbers">2</span>
+              <span className="value-texts">Integrity & Accountability</span>
             </li>
-            <li className="value-item">
-              <span className="value-number">3</span>
-              <span className="value-text">Partnerships / Collaboration</span>
+            <li className="value-items">
+              <span className="value-numbers">3</span>
+              <span className="value-texts">Partnerships / Collaboration</span>
             </li>
-            <li className="value-item">
-              <span className="value-number">4</span>
-              <span className="value-text">Equity & Inclusivity</span>
+            <li className="value-items">
+              <span className="value-numbers">4</span>
+              <span className="value-texts">Equity & Inclusivity</span>
             </li>
-            <li className="value-item">
-              <span className="value-number">5</span>
-              <span className="value-text">Dynamic in approach & opinion</span>
+            <li className="value-items">
+              <span className="value-numbers">5</span>
+              <span className="value-texts">Dynamic in approach & opinion</span>
             </li>
           </ul>
         </div>
