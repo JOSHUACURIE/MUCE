@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../../styles/globals.css';
 import './hero.css'
-// Define the image data structure
+
 interface HeroImage {
   id: number;
   url: string;
@@ -136,11 +136,11 @@ const Hero: React.FC = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
-  // Auto-advance slides
+ 
   useEffect(() => {
     const interval = setInterval(() => {
       nextImage();
-    }, 5000); // Change image every 5 seconds
+    }, 5000); 
 
     return () => clearInterval(interval);
   }, [currentImageIndex]);
@@ -169,7 +169,7 @@ const Hero: React.FC = () => {
 
   return (
     <section className="hero">
-      {/* Main Hero Background */}
+     
       <div 
         className="hero-background"
         style={{
@@ -207,7 +207,7 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Call-to-Action Buttons */}
+          
           <div className="hero-actions">
             <a href="/donate" className="ca-button ca-primary">
               Donate Now

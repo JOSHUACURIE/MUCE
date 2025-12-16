@@ -20,7 +20,7 @@ import Donate from './pages/donate';
 import PaymentSuccess from './components/payments/paymentsuccess';
 import ContactUs from './pages/contact';
 import Jobs from './pages/Volunteers';
-
+import Partners  from './pages/partners';
 
 function App() {
   return (
@@ -47,7 +47,7 @@ function App() {
             <Route path="/knowledge/events" element={<Events />} />
               <Route path="/contact" element={<ContactUs />} />
                <Route path="/opportunities/jobs" element={<Jobs />} />
-              
+              <Route path="/partners" element={<Partners/>}/>
             <Route path="*" element={<Home />} />
           </Routes>
         </main>

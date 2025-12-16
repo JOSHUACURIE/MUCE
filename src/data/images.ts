@@ -30,7 +30,7 @@ export interface Category {
   coverImage: string;
 }
 
-// Photo Categories
+
 export const photoCategories: Category[] = [
   {
     id: 1,
@@ -76,7 +76,7 @@ export const photoCategories: Category[] = [
   }
 ];
 
-// Photo Albums
+
 export const photoAlbums: Album[] = [
   {
     id: 1,
@@ -140,9 +140,9 @@ export const photoAlbums: Album[] = [
   }
 ];
 
-// Sample Photos Data (You can expand this to 100+ images)
+
 export const photos: Photo[] = [
-  // Education Category
+
 
   {
     id: 2,
@@ -158,7 +158,7 @@ export const photos: Photo[] = [
   },
 
 
-  // Economic Empowerment Category
+ 
   {
     id: 4,
     title: "Vocational Training Session",
@@ -173,7 +173,7 @@ export const photos: Photo[] = [
   },
  
 
-  // Environment & Sustainability Category
+
   {
     id: 6,
     title: "Community Tree Planting",
@@ -188,7 +188,7 @@ export const photos: Photo[] = [
   },
   {
     id: 7,
-    title: "Clean Energy Workshop",
+    title: "Peer to Peer learning Workshops",
     description: "Demonstrating solar power solutions for rural households",
     imageUrl: "https://imgur.com/lPtfYfH.jpg",
     category: "Environment & Sustainability",
@@ -199,7 +199,7 @@ export const photos: Photo[] = [
     altText: "Solar energy workshop demonstration"
   },
 
-  // Community Events Category
+  
   {
     id: 8,
     title: "Cultural Festival Performance",
@@ -239,7 +239,7 @@ export const photos: Photo[] = [
     altText: "Health education session in progress"
   },
 
-  // Youth Programs Category
+ 
   {
     id: 12,
     title: "Youth Sports Tournament",
@@ -263,13 +263,46 @@ export const photos: Photo[] = [
     tags: ["leadership", "youth", "training", "development"],
     featured: false,
     altText: "Youth leadership training session"
-  }
-
-  // Continue adding more photos here up to 100+
-  // You can organize them by category and album
+  },
+{
+  id: 14,
+  title: "Integenerational Dialogue on Youth Climate Action",
+  description: "A panel discussion bringing together youth activists, environmental experts, and policymakers.",
+  imageUrl: "https://imgur.com/ohuAlpS.jpg",
+  category: "Events",
+  album: "Climate Action Forum 2025",
+  date: "2025-11-25",
+  tags: ["climate change", "youth activism", "sustainability", "panel discussion", "environment"],
+  featured: false,
+  altText: "Panelists speaking at the Intergenerational Dialogue on Youth Climate Action event"
+},
+{
+  "id": 15,
+  "title": "Environmental Cleanup Dunga Hill Camp",
+  "description": "A community-driven cleanup initiative at Dunga Hill Camp, bringing together volunteers to remove waste, restore natural habitats.",
+  "imageUrl": "https://imgur.com/xmlhPIh.jpg",
+  "category": "Events",
+  "album": "Community Cleanup Projects",
+  "date": "2025-11-26",
+  "tags": ["cleanup drive", "community service", "environmental conservation", "waste management", "volunteerism"],
+  "featured": false,
+  "altText": "Volunteers collecting trash during the environmental cleanup at Dunga Hill Camp"
+},
+{
+  "id": 16,
+  "title": "Wisehub Biashara Pawa Youth Empowerment",
+  "description": "A youth empowerment workshop focused on entrepreneurship, business skills, and financial literacy, equipping young people with practical tools to start and grow their own ventures.",
+  "imageUrl": "https://imgur.com/5ckhkxk.jpg",
+  "category": "Events",
+  "album": "Youth Empowerment",
+  "date": "2025-11-26",
+  "tags": ["entrepreneurship", "youth empowerment", "financial literacy", "business skills", "startup training"],
+  "featured": false,
+  "altText": "Participants engaged in a Wisehub Biashara Pawa Youth Empowerment workshop session"
+}
 ];
 
-// Helper functions
+
 export const getFeaturedPhotos = (): Photo[] => {
   return photos.filter(photo => photo.featured);
 };

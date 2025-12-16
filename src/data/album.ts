@@ -15,7 +15,7 @@ export interface Album {
   images: AlbumImage[];
 }
 
-// Common image paths
+
 const IMAGE_PATHS = {
   COVERS: {
     MAZINGIRA: "https://imgur.com/TiPsWoC.jpg",
@@ -425,6 +425,76 @@ export const albums: Album[] = [
       {
         id: 16,
         imageUrl: IMAGE_PATHS.ADDITIONAL.YOUTH,
+        featured: false
+      },
+        {
+        id: 17,
+        imageUrl: "https://imgur.com/cT7g6Zc.jpg",
+        featured: false
+      },
+        {
+        id: 18,
+        imageUrl: "https://imgur.com/evknai6.jpg",
+        featured: false
+      },
+        {
+        id: 19,
+        imageUrl: "https://imgur.com/A0nL1js.jpg",
+        featured: false
+      },
+        {
+        id: 20,
+        imageUrl: "https://imgur.com/9lgT9w9.jpg",
+        featured: false
+      },
+        {
+        id: 21,
+        imageUrl: "https://imgur.com/DlCnnIv.jpg",
+        featured: false
+      },
+            {
+        id: 22,
+        imageUrl: "https://imgur.com/DlCnnIv.jpg",
+        featured: false
+      },
+      //wisehub biashara empowerment
+             {
+        id: 23,
+        imageUrl: "https://imgur.com/88rbx3a.jpg",
+        featured: false
+      },
+             {
+        id: 24,
+        imageUrl: "https://imgur.com/xELeRff.jpg",
+        featured: false
+      },
+             {
+        id: 25,
+        imageUrl: "https://imgur.com/6OkYvDs.jpg",
+        featured: false
+      },
+             {
+        id: 26,
+        imageUrl: "https://imgur.com/5ckhkxk.jpg",
+        featured: false
+      },
+             {
+        id: 27,
+        imageUrl: "https://imgur.com/CELw2ss.jpg",
+        featured: false
+      },
+             {
+        id: 28,
+        imageUrl: "https://imgur.com/DlCnnIv.jpg",
+        featured: false
+      },       {
+        id: 29,
+        imageUrl: "https://imgur.com/91agQva.jpg",
+        featured: false
+      },
+             {
+        id: 30,
+        imageUrl: "https://imgur.com/5aMIdAE.jpg",
         featured: false
       }
     ]

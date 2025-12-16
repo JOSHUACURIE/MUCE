@@ -15,7 +15,7 @@ const Photos: React.FC = () => {
         </div>
         <h1 className="page-title">Photo Gallery</h1>
         <p className="page-subtitle">
-          Capturing moments of transformation, hope, and community empowerment
+          Capturing moments of youth empowerment, leadership, and sustainable change
         </p>
       </div>
 
@@ -46,11 +46,11 @@ const Photos: React.FC = () => {
                     <div className="stat-label">Photos</div>
                   </div>
                   <div className="stat">
-                    <div className="stat-number">500+</div>
-                    <div className="stat-label">Participants</div>
+                    <div className="stat-number">300+</div>
+                    <div className="stat-label">Youth Participants</div>
                   </div>
                   <div className="stat">
-                    <div className="stat-number">15</div>
+                    <div className="stat-number">12</div>
                     <div className="stat-label">Communities</div>
                   </div>
                 </div>
@@ -92,7 +92,7 @@ const Photos: React.FC = () => {
             <h2>Recent Photos</h2>
             <div className="section-divider"></div>
             <p className="section-description">
-              Latest captures from our programs and community activities
+              Latest captures from our youth empowerment programs and activities
             </p>
           </div>
           
@@ -144,10 +144,10 @@ const Photos: React.FC = () => {
         {/* Call to Action */}
         <section className="cta-section">
           <div className="cta-content">
-            <h2>Share Your Moments With Us</h2>
+            <h2>Share Your Youth Moments With Us</h2>
             <p>
-              Have photos from our events or programs? We'd love to see them! Share your captures 
-              and help us tell the complete story of community transformation.
+              Have photos from our youth events or programs? We'd love to see them! Share your captures 
+              and help us tell the complete story of youth empowerment and sustainable change.
             </p>
             <div className="cta-buttons">
               <a href="/contact" className="cta-button primary">
@@ -155,6 +155,9 @@ const Photos: React.FC = () => {
               </a>
               <a href="/media/videos" className="cta-button secondary">
                 Watch Our Videos
+              </a>
+              <a href="/get-involved" className="cta-button outline">
+                Join Youth Network
               </a>
             </div>
           </div>

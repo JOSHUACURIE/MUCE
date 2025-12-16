@@ -145,6 +145,80 @@ const Events: React.FC = () => {
                 <button className="event-action">Register</button>
               </div>
             </div>
+
+
+            <div className="event-card">
+  <div className="event-date-small">
+    <div className="month">DEC</div>
+    <div className="day">2</div>
+  </div>
+  <div className="event-info">
+    <div className="event-type">Concert & Forum</div>
+    <h3>Dissemination & Validation Concert: Youth Climate Action</h3>
+    <div className="event-meta-small">
+      <span>🕒 7:45 AM - 1:00 PM</span>
+      <span>📍 Pinecone Hotel, Tom Mboya Estate</span>
+    </div>
+    <p>
+      Share climate action outcomes and validate recommendations through an engaging concert with performances and community participation.
+    </p>
+    <div className="event-stats">
+      <span>🎵 Live Performances</span>
+      <span>🤝 Community Validation</span>
+      <span>🌿 Action Plans</span>
+    </div>
+    <button className="event-action">Register</button>
+  </div>
+</div>
+
+<div className="event-card">
+  <div className="event-date-small">
+    <div className="month">JAN</div>
+    <div className="day">18</div>
+  </div>
+  <div className="event-info">
+    <div className="event-type">Hackathon</div>
+    <h3>Youth Tech Innovation Hackathon: Green Solutions</h3>
+    <div className="event-meta-small">
+      <span>🕒 9:00 AM (48-hour event)</span>
+      <span>📍 Innovation Hub, Tech Valley</span>
+    </div>
+    <p>
+      48-hour hackathon where youth developers create tech solutions for environmental challenges like waste management, clean energy, and conservation.
+    </p>
+    <div className="event-stats">
+      <span>💻 Tech Development</span>
+      <span>🏆 Prize Pool</span>
+      <span>🤝 Mentorship</span>
+    </div>
+    <button className="event-action">Apply Now</button>
+  </div>
+</div>
+
+
+<div className="event-card">
+  <div className="event-date-small">
+    <div className="month">FEB</div>
+    <div className="day">8</div>
+  </div>
+  <div className="event-info">
+    <div className="event-type">Leadership Forum</div>
+    <h3>Women in Conservation Leadership Forum</h3>
+    <div className="event-meta-small">
+      <span>🕒 10:00 AM - 3:00 PM</span>
+      <span>📍 Conservation Center Auditorium</span>
+    </div>
+    <p>
+      Empowering women leaders in environmental conservation through networking, skill-building workshops, and panel discussions with industry experts.
+    </p>
+    <div className="event-stats">
+      <span>👩‍💼 Networking</span>
+      <span>📈 Career Development</span>
+      <span>🌳 Conservation Focus</span>
+    </div>
+    <button className="event-action">Register</button>
+  </div>
+</div>
           </div>
         </section>
 
@@ -169,7 +243,7 @@ const Events: React.FC = () => {
                 <button className="resource-btn">🎥 Recording</button>
               </div>
             </div>
-            
+  
             <div className="past-event">
               <div className="event-year">2025</div>
               <h3>Annual Stakeholder Meeting</h3>
@@ -181,6 +255,7 @@ const Events: React.FC = () => {
               </div>
             </div>
             
+            
             <div className="past-event">
               <div className="event-year">2023</div>
               <h3>Education Innovation Fair</h3>
@@ -191,6 +266,8 @@ const Events: React.FC = () => {
                 <button className="resource-btn">🎥 Highlights</button>
               </div>
             </div>
+
+            
           </div>
         </section>
 
