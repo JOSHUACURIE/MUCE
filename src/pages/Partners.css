@@ -61,31 +61,7 @@ color: #2e7d32;
   margin: 0;
 }
 
-.logo-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 30px;
-  padding: 20px;
-}
 
-.logo-placeholder {
-  background: white;
-  padding: 30px 20px;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 120px;
-  color: #666;
-  font-weight: 500;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.logo-placeholder:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-}
 
 .partners-cta {
   background: linear-gradient(to right, #2e7d32, #4caf50);
@@ -147,4 +123,51 @@ color: #2e7d32;
   .logo-grid {
     grid-template-columns: 1fr;
   }
+}
+
+.partner-logos {
+  padding: 40px 0;
+  margin: 40px 0;
+}
+
+.logo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 30px;
+  align-items: center;
+  justify-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.logo-placeholder {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+    width: 250px;
+   height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-placeholder:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.logo-placeholder img {
+
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(20%);
+  transition: filter 0.3s ease;
+}
+
+.logo-placeholder:hover img {
+  filter: grayscale(0%);
 }

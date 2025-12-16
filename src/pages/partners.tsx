@@ -1,5 +1,5 @@
 import './Partners.css'
-
+import { Link } from 'react-router-dom';
 
 function Partners ()  {
   return (
@@ -8,7 +8,7 @@ function Partners ()  {
         
       
         <h1 className="partner-main-title">OUR PARTNERS</h1>
-        <div className="partner-tagline">EDUCATE, EMPOWER AND EXPLORE</div>
+        <div className="partner-tagline">Partnering for Education, Empowerment, and Sustainable Development</div>
       </div>
       
       <div className="partners-content">
@@ -23,7 +23,7 @@ function Partners ()  {
         
         <div className="partner-logos">
           <div className="logo-grid">
-            <div className="logo-placeholder">Partner Logo 1</div>
+            <div className="logo-placeholder"><img src='https://imgur.com/8EgOYQM.jpg'/></div>
       
           </div>
         </div>
@@ -31,7 +31,7 @@ function Partners ()  {
       
       <div className="partners-cta">
         <p>Interested in partnering with us?</p>
-        <button className="partner-cta-btn">Become a Partner</button>
+      <Link to="/contact"><button className="partner-cta-btn">Become a Partner</button></Link>  
       </div>
     </div>
   );
